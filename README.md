@@ -6,6 +6,7 @@ A modern, high-performance, dark-themed personal portfolio website built with **
 
 ## 🚀 Live Preview & Overview
 
+- **Live Website:** [https://athul-krishna-portfolio-livid.vercel.app](https://athul-krishna-portfolio-livid.vercel.app)
 - **Developer:** Athul Krishna M S
 - **Role:** Java Developer | Spring Boot | Microservices
 - **Location:** Trivandrum, Kerala, India
