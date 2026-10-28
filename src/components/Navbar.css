@@ -178,13 +178,17 @@
     -webkit-backdrop-filter: blur(16px);
     z-index: 1000;
     transform: translateX(100%);
-    transition: transform var(--transition-slow);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform var(--transition-slow), visibility var(--transition-slow);
     padding: calc(var(--header-height) + 16px) 20px calc(24px + env(safe-area-inset-bottom, 0px)) 20px;
     overflow-y: auto;
   }
 
   .mobile-nav-drawer.open {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .mobile-nav-inner {
