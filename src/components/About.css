@@ -170,18 +170,50 @@
 }
 
 @media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 32px;
+  }
   .about-pillars-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
 @media (max-width: 868px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
   .about-pillars-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-subheading {
+    font-size: 1.25rem;
+  }
+
+  .stats-cards-grid {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px 12px;
+  }
+
+  .stat-value {
+    font-size: 1.45rem;
+  }
+
+  .about-quote-card {
+    padding: 18px 16px;
+  }
+
+  .strength-item {
+    font-size: 0.875rem;
   }
 }
 

@@ -181,9 +181,16 @@
   gap: 6px;
 }
 
+@media (max-width: 1024px) {
+  .timeline-card {
+    padding: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .timeline-item {
-    gap: 16px;
+    gap: 14px;
+    padding-bottom: 36px;
   }
 
   .timeline-marker {
@@ -198,7 +205,7 @@
   .timeline-card-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
   }
 
   .timeline-meta {
@@ -206,7 +213,44 @@
   }
 
   .timeline-card {
-    padding: 20px;
+    padding: 18px 16px;
+  }
+
+  .experience-role {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-item {
+    gap: 10px;
+  }
+
+  .timeline-marker {
+    width: 26px;
+  }
+
+  .marker-dot {
+    width: 26px;
+    height: 26px;
+  }
+
+  .marker-dot svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-card {
+    padding: 16px 12px;
+  }
+
+  .highlight-item {
+    font-size: 0.85rem;
+  }
+
+  .tech-label {
+    width: 100%;
+    margin-bottom: 4px;
   }
 }
 

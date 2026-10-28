@@ -177,16 +177,38 @@
 @media (max-width: 1024px) {
   .skills-cards-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
   .skills-philosophy-card {
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 24px;
   }
 }
 
 @media (max-width: 640px) {
+  .skills-filter-bar {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .filter-pill {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
   .skills-cards-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .skill-category-card {
+    padding: 20px 16px;
+  }
+
+  .skills-philosophy-card {
+    padding: 20px 16px;
   }
 }
 
