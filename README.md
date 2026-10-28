@@ -10,7 +10,6 @@ A modern, high-performance, dark-themed personal portfolio website built with **
 - **Role:** Java Developer | Spring Boot | Microservices
 - **Location:** Trivandrum, Kerala, India
 - **Email:** [athulkrishnams027@gmail.com](mailto:athulkrishnams027@gmail.com)
-- **Phone:** [+91-9207591476](tel:+919207591476)
 - **LinkedIn:** [linkedin.com/in/athulkrishnams](https://linkedin.com/in/athulkrishnams)
 - **GitHub:** [github.com/athulkrishnams027](https://github.com/athulkrishnams027)
 

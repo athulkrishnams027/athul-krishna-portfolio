@@ -4,8 +4,6 @@ export const personalInfo = {
   title: "Java Developer | Spring Boot | Microservices",
   location: "Trivandrum, Kerala, India",
   email: "athulkrishnams027@gmail.com",
-  phone: "+91-9207591476",
-  phoneDisplay: "+91 92075 91476",
   linkedIn: "https://linkedin.com/in/athulkrishnams",
   github: "https://github.com/athulkrishnams027",
   resumePath: "/Athul_Krishna_Resume.pdf",

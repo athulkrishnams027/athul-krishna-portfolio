@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   Mail,
-  Phone,
   MapPin,
   Linkedin,
   Github,
@@ -58,7 +57,7 @@ export default function Contact() {
           </div>
           <h2 className="section-title">Let's Connect</h2>
           <p className="section-description">
-            I am actively open to Java Developer and Java Full Stack Developer opportunities. Feel free to reach out directly via email, phone, or LinkedIn.
+            I am actively open to Java Developer and Java Full Stack Developer opportunities. Feel free to reach out directly via email or LinkedIn.
           </p>
         </div>
 
@@ -91,19 +90,6 @@ export default function Contact() {
                   {copiedEmail ? <Check size={16} className="copied-check" /> : <Copy size={16} />}
                   <span className="copy-tooltip">{copiedEmail ? 'Copied!' : 'Copy'}</span>
                 </button>
-              </div>
-
-              {/* Phone Card */}
-              <div className="contact-channel-card card">
-                <div className="channel-icon-box">
-                  <Phone size={20} />
-                </div>
-                <div className="channel-details">
-                  <span className="channel-label">Phone &amp; WhatsApp</span>
-                  <a href={`tel:${personalInfo.phone}`} className="channel-value">
-                    {personalInfo.phoneDisplay}
-                  </a>
-                </div>
               </div>
 
               {/* Location Card */}
