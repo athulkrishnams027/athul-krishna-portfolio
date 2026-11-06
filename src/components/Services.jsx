@@ -29,7 +29,7 @@ export default function Services() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag teal-tag">
+          <div className="section-tag lime-tag">
             <Briefcase size={14} />
             <span>Freelance Web Solutions</span>
           </div>

@@ -22,10 +22,10 @@
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background: rgba(6, 182, 212, 0.08);
-  border: 1px solid rgba(6, 182, 212, 0.25);
+  background: var(--badge-lime-bg);
+  border: 1px solid var(--badge-lime-border);
   border-radius: var(--radius-full);
-  color: var(--text-teal);
+  color: var(--accent-lime);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 600;
@@ -35,13 +35,13 @@
 }
 
 .intro-badge-icon {
-  color: var(--accent-secondary);
+  color: var(--accent-lime);
   flex-shrink: 0;
 }
 
 .about-subheading {
   font-size: clamp(1.35rem, 3vw, 1.85rem);
-  color: #f1f5f9;
+  color: var(--text-primary);
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.35;
@@ -64,7 +64,7 @@
 .strengths-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-primary);
   margin-bottom: 14px;
 }
 
@@ -79,7 +79,7 @@
   align-items: center;
   gap: 12px;
   font-size: 0.95rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
@@ -174,9 +174,9 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(6, 9, 17, 0.1) 0%,
-    rgba(6, 9, 17, 0.5) 50%,
-    rgba(6, 9, 17, 0.92) 100%
+    rgba(8, 13, 11, 0.1) 0%,
+    rgba(8, 13, 11, 0.5) 50%,
+    rgba(8, 13, 11, 0.92) 100%
   );
   pointer-events: none;
 }
@@ -191,7 +191,7 @@
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.775rem;
-  color: #f1f5f9;
+  color: var(--text-primary);
   z-index: 2;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
@@ -206,8 +206,8 @@
 }
 
 .about-quote-card {
-  background: linear-gradient(145deg, rgba(16, 185, 129, 0.08) 0%, rgba(10, 15, 29, 0.95) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.22);
+  background: linear-gradient(145deg, var(--bg-card-elevated) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 24px;
   position: relative;
@@ -216,7 +216,7 @@
 .about-quote-text {
   font-size: 0.95rem;
   font-style: italic;
-  color: #e2e8f0;
+  color: var(--text-secondary);
   line-height: 1.65;
   margin-bottom: 16px;
 }
@@ -254,7 +254,7 @@
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.825rem;
-  color: var(--text-teal);
+  color: var(--accent-lime);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 8px;
@@ -282,8 +282,8 @@
 }
 
 .interest-card:hover {
-  border-color: rgba(6, 182, 212, 0.35);
-  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
   transform: translateY(-3px);
 }
 
@@ -291,12 +291,12 @@
   width: 42px;
   height: 42px;
   border-radius: var(--radius-md);
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.25);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-teal);
+  color: var(--accent-bright);
 }
 
 .interest-card-title {

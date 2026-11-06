@@ -65,7 +65,7 @@
 
 .timeline-item.highlighted .timeline-card {
   border-color: rgba(16, 185, 129, 0.25);
-  background: linear-gradient(145deg, rgba(17, 26, 46, 0.95) 0%, rgba(13, 20, 36, 0.9) 100%);
+  background: linear-gradient(145deg, var(--bg-card-elevated) 0%, var(--bg-card) 100%);
 }
 
 .timeline-card-header {
@@ -84,9 +84,9 @@
 }
 
 .badge-live {
-  background: rgba(16, 185, 129, 0.15);
-  color: #a7f3d0;
-  border-color: rgba(16, 185, 129, 0.4);
+  background: var(--badge-lime-bg);
+  color: var(--accent-lime);
+  border-color: var(--badge-lime-border);
 }
 
 .live-dot {
@@ -149,7 +149,7 @@
   gap: 12px;
   font-size: 0.925rem;
   line-height: 1.55;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 .highlight-bullet {

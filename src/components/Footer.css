@@ -1,6 +1,6 @@
 .footer {
-  background-color: #05080e;
-  border-top: 1px solid var(--border-subtle);
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
   padding: 64px 0 32px 0;
   position: relative;
 }
@@ -67,7 +67,7 @@
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #e2e8f0;
+  color: var(--text-primary);
   margin-bottom: 18px;
 }
 

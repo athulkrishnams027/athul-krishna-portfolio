@@ -137,17 +137,17 @@
 .skill-level-badge {
   font-size: 0.725rem;
   font-family: var(--font-mono);
-  color: var(--text-teal);
-  background: rgba(6, 182, 212, 0.1);
+  color: var(--accent-lime);
+  background: var(--badge-lime-bg);
   padding: 2px 7px;
   border-radius: 4px;
-  border: 1px solid rgba(6, 182, 212, 0.2);
+  border: 1px solid var(--badge-lime-border);
 }
 
 /* Philosophy Card */
 .skills-philosophy-card {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(10, 15, 29, 0.95) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: linear-gradient(135deg, var(--bg-card-elevated) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 32px;
   display: grid;
@@ -171,7 +171,7 @@
 .philosophy-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #f8fafc;
+  color: var(--text-primary);
   margin-bottom: 10px;
 }
 
@@ -192,7 +192,7 @@
   align-items: center;
   gap: 10px;
   font-size: 0.9rem;
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-weight: 500;
 }
 

@@ -148,7 +148,7 @@ Email: ${formData.email}`;
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-tag teal-tag">
+          <div className="section-tag lime-tag">
             <MessageSquare size={14} />
             <span>Direct Inquiries</span>
           </div>
