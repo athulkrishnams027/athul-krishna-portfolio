@@ -79,6 +79,22 @@ export default function ProjectModal({ project, onClose }) {
           </h2>
           <p className="modal-subtitle">{project.subtitle}</p>
 
+          {/* Architectural / Environment Visual Banner */}
+          {project.image && (
+            <div className="modal-banner-wrapper">
+              <img
+                src={project.image}
+                alt={project.imageAlt || project.title}
+                className="modal-banner-img"
+              />
+              <div className="modal-banner-overlay"></div>
+              <div className="modal-banner-badge">
+                <span className="banner-dot"></span>
+                <span>{project.isGovernment ? 'Government Enterprise Architecture & Telemetry' : 'Full-Stack Containerization & Deployment'}</span>
+              </div>
+            </div>
+          )}
+
           {/* Confidentiality notice for Government apps */}
           {project.isGovernment && (
             <div className="modal-confidential-notice">

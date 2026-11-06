@@ -111,6 +111,23 @@ export default function About() {
               ))}
             </div>
 
+            {/* Subtle Engineering & Workstation Photography */}
+            <div className="about-photo-card card">
+              <div className="about-photo-wrapper">
+                <img
+                  src="/images/about-tech-developer.webp"
+                  alt="Software development workstation displaying modern programming environment"
+                  className="about-tech-photo"
+                  loading="lazy"
+                />
+                <div className="about-photo-overlay"></div>
+                <div className="about-photo-tag">
+                  <span className="about-photo-indicator"></span>
+                  <span>Modern Software Development Workstation</span>
+                </div>
+              </div>
+            </div>
+
             <div className="about-quote-card">
               <p className="about-quote-text">
                 "Java Developer with 1+ year of hands-on experience building and maintaining Java and Spring Boot applications with REST web services, backed by relational databases (PostgreSQL / MySQL) and SQL. Comfortable on the front end with HTML, CSS, JavaScript and React.js. Experienced in developing, debugging and supporting live enterprise applications for the Kerala Government."

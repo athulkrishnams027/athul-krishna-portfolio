@@ -154,6 +154,77 @@
   flex-grow: 1;
 }
 
+/* Contact Accent Card */
+.contact-accent-card {
+  margin-top: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-card);
+  overflow: hidden;
+  background: var(--bg-card);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-normal);
+}
+
+.contact-accent-card:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.contact-accent-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+
+.contact-accent-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.contact-accent-card:hover .contact-accent-img {
+  transform: scale(1.04);
+}
+
+.contact-accent-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 20, 0.1) 0%,
+    rgba(8, 12, 20, 0.5) 50%,
+    rgba(8, 12, 20, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.contact-accent-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #f1f5f9;
+  z-index: 2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+.contact-accent-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 6px var(--accent-primary);
+  flex-shrink: 0;
+}
+
 /* Form Column */
 .contact-form-card {
   padding: 36px;

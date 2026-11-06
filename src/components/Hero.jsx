@@ -148,6 +148,23 @@ export default function Hero() {
             <span className="hero-social-divider"></span>
             <span className="hero-experience-quick">1+ Year Hands-on Enterprise Experience</span>
           </div>
+
+          {/* Authentic Programming Photography Card */}
+          <div className="hero-photo-card">
+            <div className="hero-photo-wrapper">
+              <img
+                src="/images/hero-code-workspace.webp"
+                alt="Close-up photograph of computer monitor displaying real Java backend source code"
+                className="hero-coding-photo"
+                loading="eager"
+              />
+              <div className="hero-photo-gradient"></div>
+              <div className="hero-photo-meta">
+                <span className="hero-photo-dot"></span>
+                <span className="hero-photo-label">Enterprise Java &amp; Spring Boot Development</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right Column: Code Editor Illustration */}

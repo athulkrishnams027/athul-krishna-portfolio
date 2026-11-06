@@ -45,6 +45,23 @@ export default function Projects() {
 
             return (
               <div key={project.id} className="project-card card">
+                {/* Visual Architecture / System Environment Thumbnail */}
+                {project.image && (
+                  <div className="project-thumbnail-wrapper">
+                    <img
+                      src={project.image}
+                      alt={project.imageAlt || project.title}
+                      className="project-thumbnail-img"
+                      loading="lazy"
+                    />
+                    <div className="project-thumbnail-overlay"></div>
+                    <div className="project-env-tag">
+                      <span className="env-tag-dot"></span>
+                      <span>{project.isGovernment ? 'Government Infrastructure' : 'Full-Stack Architecture'}</span>
+                    </div>
+                  </div>
+                )}
+
                 <div className="project-card-top">
                   <div className="project-header-row">
                     <div className="project-icon-box">

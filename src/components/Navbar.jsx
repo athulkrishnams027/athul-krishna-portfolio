@@ -13,6 +13,7 @@ export default function Navbar() {
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Services', href: '#services' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -26,7 +27,7 @@ export default function Navbar() {
       }
 
       // Track active section
-      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'education', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'services', 'education', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (let i = sections.length - 1; i >= 0; i--) {

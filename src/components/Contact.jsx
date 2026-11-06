@@ -128,6 +128,23 @@ export default function Contact() {
                 </a>
               </div>
             </div>
+
+            {/* Infrastructure & Connectivity Visual Accent */}
+            <div className="contact-accent-card">
+              <div className="contact-accent-img-wrap">
+                <img
+                  src="/images/contact-datacenter-accent.webp"
+                  alt="Enterprise server infrastructure and optical network connectivity"
+                  className="contact-accent-img"
+                  loading="lazy"
+                />
+                <div className="contact-accent-overlay"></div>
+                <div className="contact-accent-caption">
+                  <span className="contact-accent-dot"></span>
+                  <span>Enterprise Backend &amp; Full-Stack Inquiries Welcome</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Direct Email Composer Form */}

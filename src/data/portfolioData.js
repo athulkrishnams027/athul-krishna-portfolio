@@ -176,6 +176,8 @@ export const projects = [
     isGovernment: true,
     repoAvailable: false,
     demoAvailable: false,
+    image: "/images/project-animal-husbandry.webp",
+    imageAlt: "Enterprise server rack and microservices infrastructure for Kerala Government animal husbandry services",
     shortDescription:
       "A microservices-based enterprise platform covering Citizen, Pet Shop, and Dog Breeder modules with end-to-end registration and approval workflows.",
     fullDescription:
@@ -216,6 +218,8 @@ export const projects = [
     isGovernment: true,
     repoAvailable: false,
     demoAvailable: false,
+    image: "/images/project-analytical-lab.webp",
+    imageAlt: "Analytical systems data and laboratory enterprise management infrastructure",
     shortDescription:
       "An enterprise microservices platform managing laboratory procurement, chemical inventory, asset tracking, and maintenance service workflows.",
     fullDescription:
@@ -257,6 +261,8 @@ export const projects = [
     repoAvailable: true,
     githubUrl: "https://github.com/athulkrishnams027",
     demoAvailable: false,
+    image: "/images/project-student-tracker.webp",
+    imageAlt: "Containerized Docker terminal and Spring Boot backend console environment",
     shortDescription:
       "A complete student record management system with Spring Boot REST APIs, React client, custom exception handling, and multi-stage Docker deployment.",
     fullDescription:
@@ -299,6 +305,8 @@ export const projects = [
     repoAvailable: true,
     githubUrl: "https://github.com/athulkrishnams027",
     demoAvailable: false,
+    image: "/images/project-movie-watchlist.webp",
+    imageAlt: "Full stack Java Spring Boot and React development environment with code syntax display",
     shortDescription:
       "A responsive full-stack movie tracker built with Spring Boot REST APIs, MySQL persistence, and dynamic React Hooks state management.",
     fullDescription:
@@ -322,6 +330,69 @@ export const projects = [
       "MySQL",
       "Git"
     ]
+  }
+];
+
+export const freelanceServices = [
+  {
+    id: "business-web",
+    title: "Business Website Development",
+    tagline: "Scalable, high-performance web platforms for growing businesses & enterprises.",
+    description: "Architecting reliable, responsive, and SEO-optimized business websites using modern React and semantic web standards. Focused on fast load speeds, professional design, cross-device responsiveness, and clean maintainable code.",
+    image: "/images/service-business-web.webp",
+    imageAlt: "Enterprise business web development and analytics dashboard on screen",
+    features: [
+      "Custom React Architecture",
+      "Enterprise Responsive Layouts",
+      "Technical SEO & Core Web Vitals",
+      "Brand-aligned Dark & Light Themes"
+    ],
+    technologies: ["React", "HTML5/CSS3", "JavaScript (ES6+)", "Vite"]
+  },
+  {
+    id: "portfolio-web",
+    title: "Portfolio Website Creation",
+    tagline: "Bespoke personal and developer portfolios designed to convert opportunities.",
+    description: "Designing modern, high-impact portfolios for developers, engineers, and professionals. Features interactive code snippet viewers, project breakdowns, resume downloads, and seamless mobile UX.",
+    image: "/images/service-portfolio-web.webp",
+    imageAlt: "Developer portfolio workstation displaying responsive portfolio layout",
+    features: [
+      "Interactive Code Showcases",
+      "Zero-Overflow Mobile Optimization",
+      "Embedded Resume & Socials Integration",
+      "Subtle Cyber & Developer Aesthetics"
+    ],
+    technologies: ["React", "CSS Grid & Flexbox", "Lucide Icons", "Vercel"]
+  },
+  {
+    id: "landing-page",
+    title: "Landing Page Development",
+    tagline: "Conversion-optimized landing pages that turn visitors into clients and users.",
+    description: "Building fast-loading, single-page landing experiences with compelling typography, high-contrast calls to action, clear product narratives, and frictionless direct contact pipelines.",
+    image: "/images/service-landing-page.webp",
+    imageAlt: "High conversion landing page UI UX engineering on monitor",
+    features: [
+      "Above-the-Fold Engagement",
+      "Direct Email & Contact Triggers",
+      "Micro-animations & Smooth Scroll",
+      "Ultra-Fast Static Site Performance"
+    ],
+    technologies: ["React", "Vite", "Modern CSS", "Accessibility (a11y)"]
+  },
+  {
+    id: "web-app",
+    title: "Web Application Development",
+    tagline: "Full-stack web applications with robust backend APIs and dynamic interfaces.",
+    description: "End-to-end full-stack web applications pairing Java Spring Boot backends and RESTful APIs with dynamic React interfaces, secure relational database persistence, and containerized deployment.",
+    image: "/images/service-web-app.webp",
+    imageAlt: "Full stack web application and REST API dashboard on dual monitors",
+    features: [
+      "Spring Boot RESTful Endpoints",
+      "Relational Data Persistence (PostgreSQL/MySQL)",
+      "Dynamic State Management with React Hooks",
+      "Docker Containerization & Cloud Deployments"
+    ],
+    technologies: ["Java", "Spring Boot", "React", "PostgreSQL", "Docker"]
   }
 ];
 
