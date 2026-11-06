@@ -1,29 +1,35 @@
 :root {
-  /* Color Palette */
-  --bg-primary: #080c14;
-  --bg-secondary: #0d1322;
-  --bg-card: #111a2e;
-  --bg-card-hover: #15223c;
-  --bg-surface: #162035;
-  --bg-code: #0a0f1b;
+  /* Premium Dark Developer Color Palette */
+  --bg-primary: #060913;          /* Deep navy / almost black */
+  --bg-secondary: #0a0f1d;        /* Slightly lighter dark navy */
+  --bg-card: #0e1526;             /* Charcoal / obsidian cards */
+  --bg-card-hover: #131d33;       /* Card hover state */
+  --bg-surface: #152038;          /* Surface overlays */
+  --bg-code: #080c18;             /* Dark IDE editor */
 
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(16, 185, 129, 0.5);
   --border-card: rgba(255, 255, 255, 0.07);
+  --border-focus: rgba(16, 185, 129, 0.6);
+  --border-accent: rgba(16, 185, 129, 0.25);
 
-  --accent-primary: #10b981;       /* Emerald */
-  --accent-secondary: #059669;     /* Deep Emerald */
+  /* Primary Accent: Neon Green | Secondary Accent: Teal */
+  --accent-primary: #10b981;       /* Emerald / Neon Green */
+  --accent-secondary: #06b6d4;     /* Vibrant Teal */
+  --accent-teal: #14b8a6;          /* Deep Teal */
   --accent-bright: #34d399;        /* Mint / Light Emerald */
-  --accent-glow: rgba(16, 185, 129, 0.15);
+  --accent-glow: rgba(16, 185, 129, 0.2);
   --accent-glow-subtle: rgba(16, 185, 129, 0.08);
+  --accent-glow-teal: rgba(6, 182, 212, 0.15);
 
+  /* Typography Colors */
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   --text-accent: #34d399;
+  --text-teal: #22d3ee;
 
   --badge-bg: rgba(16, 185, 129, 0.1);
-  --badge-border: rgba(16, 185, 129, 0.25);
+  --badge-border: rgba(16, 185, 129, 0.28);
   --badge-text: #34d399;
 
   /* Typography */
@@ -40,10 +46,11 @@
   --radius-full: 9999px;
 
   /* Elevation & Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.55);
-  --shadow-accent: 0 0 25px rgba(16, 185, 129, 0.18);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 0 25px rgba(16, 185, 129, 0.16);
+  --shadow-teal: 0 0 25px rgba(6, 182, 212, 0.14);
 
   /* Transitions */
   --transition-fast: 0.15s ease;
@@ -121,13 +128,25 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 85% 75%, rgba(5, 150, 105, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(6, 182, 212, 0.04) 0%, transparent 50%),
     linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   pointer-events: none;
   z-index: -1;
+}
+
+/* Scroll Progress Bar at very top of screen */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  z-index: 1001;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
 }
 
 /* Scrollbar */
@@ -143,7 +162,7 @@ body::before {
   border: 2px solid var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-secondary);
+  background: var(--accent-primary);
 }
 
 /* Typography Defaults */
@@ -167,7 +186,8 @@ a {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+select:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
@@ -183,22 +203,22 @@ textarea:focus-visible {
 }
 
 .section {
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   position: relative;
 }
 
 @media (max-width: 1024px) {
   .section {
-    padding-top: 76px;
-    padding-bottom: 76px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
 @media (max-width: 768px) {
   .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
   .container {
     padding-left: 16px;
@@ -208,19 +228,19 @@ textarea:focus-visible {
 
 @media (max-width: 480px) {
   .section {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 52px;
+    padding-bottom: 52px;
   }
   .container {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }
 
 /* Section Headers */
 .section-header {
   text-align: center;
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto 56px auto;
 }
 
@@ -246,12 +266,19 @@ textarea:focus-visible {
   margin-bottom: 16px;
 }
 
+.section-tag.teal-tag {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3);
+  color: var(--text-teal);
+}
+
 .section-title {
-  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-size: clamp(1.85rem, 4.5vw, 2.75rem);
   color: var(--text-primary);
   margin-bottom: 16px;
   overflow-wrap: break-word;
   word-break: break-word;
+  letter-spacing: -0.03em;
 }
 
 .section-description {
@@ -260,7 +287,7 @@ textarea:focus-visible {
   line-height: 1.65;
 }
 
-/* Common UI Elements */
+/* Badges */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -278,6 +305,12 @@ textarea:focus-visible {
   background: var(--badge-bg);
   color: var(--accent-bright);
   border-color: var(--badge-border);
+}
+
+.badge.badge-teal {
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--text-teal);
+  border-color: rgba(6, 182, 212, 0.25);
 }
 
 .badge.badge-tech {
@@ -328,7 +361,7 @@ textarea:focus-visible {
   background-color: var(--accent-bright);
   color: #021a12;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
 }
 
 .btn-primary:active {
@@ -344,12 +377,26 @@ textarea:focus-visible {
 
 .btn-secondary:hover {
   background-color: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(16, 185, 129, 0.35);
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
 .btn-secondary:active {
   transform: translateY(0);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-secondary);
+  color: var(--text-teal);
+  background: rgba(6, 182, 212, 0.06);
+  transform: translateY(-2px);
 }
 
 .btn-sm {
@@ -389,6 +436,65 @@ textarea:focus-visible {
   transform: translateY(-3px);
 }
 
+/* Floating Back-To-Top Button */
+.back-to-top-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background: rgba(14, 21, 38, 0.9);
+  border: 1px solid var(--border-accent);
+  color: var(--accent-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 990;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-normal);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+}
+
+.back-to-top-float.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-float:hover {
+  background: var(--accent-primary);
+  color: #041f17;
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+@media (max-width: 768px) {
+  .back-to-top-float {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Subtle Reveal Animations */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -397,5 +503,7 @@ textarea:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .scroll-progress-bar {
+    display: none;
+  }
 }
-

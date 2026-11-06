@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ArrowRight,
   FileDown,
+  MessageSquare,
   MapPin,
   Linkedin,
   Github,
@@ -10,7 +11,8 @@ import {
   Check,
   Code2,
   Cpu,
-  Layers
+  Layers,
+  Sparkles
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import './Hero.css';
@@ -66,8 +68,22 @@ public class LabRequisitionService {
 export default function Hero() {
   const [activeTab, setActiveTab] = useState('controller');
   const [copied, setCopied] = useState(false);
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [fadeRole, setFadeRole] = useState(true);
 
   const currentSnippet = codeSnippets[activeTab];
+
+  // Animated rotating role text
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFadeRole(false);
+      setTimeout(() => {
+        setRoleIndex((prev) => (prev + 1) % personalInfo.animatedRoles.length);
+        setFadeRole(true);
+      }, 200);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText(currentSnippet.code);
@@ -80,31 +96,39 @@ export default function Hero() {
       <div className="container hero-container">
         {/* Left Column: Intro & Calls to Action */}
         <div className="hero-content">
+          {/* Availability Indicator */}
           <div className="hero-status-pill">
             <span className="pulse-indicator"></span>
-            <span>Software Apprentice @ Keltron ITBG</span>
+            <span>{personalInfo.availabilityStatus}</span>
           </div>
 
           <h1 className="hero-name">
             <span className="hero-name-intro">Hi, I'm</span> {personalInfo.name}
           </h1>
 
-          <p className="hero-title">{personalInfo.title}</p>
+          {/* Professional Title & Animated Rotating Role */}
+          <div className="hero-role-wrapper">
+            <span className="hero-title-static">{personalInfo.title}</span>
+            <span className="hero-role-separator">/</span>
+            <span className={`hero-animated-role ${fadeRole ? 'visible' : 'fading'}`}>
+              {personalInfo.animatedRoles[roleIndex]}
+            </span>
+          </div>
 
-          <h2 className="hero-headline">{personalInfo.headline}</h2>
-
-          <p className="hero-description">{personalInfo.supportingText}</p>
+          <p className="hero-description">{personalInfo.introduction}</p>
 
           <div className="hero-location">
             <MapPin size={16} className="hero-location-icon" />
             <span>{personalInfo.location}</span>
+            <span className="hero-meta-divider">&bull;</span>
+            <span className="hero-subtext">{personalInfo.supportingText}</span>
           </div>
 
           {/* Action Buttons */}
           <div className="hero-buttons">
             <a href="#projects" className="btn btn-primary">
-              <span>View My Projects</span>
-              <ArrowRight size={18} />
+              <span>Explore My Work</span>
+              <ArrowRight size={17} />
             </a>
 
             <a
@@ -113,12 +137,17 @@ export default function Hero() {
               className="btn btn-secondary"
               title="Download Athul Krishna Resume PDF"
             >
-              <FileDown size={18} />
+              <FileDown size={17} />
               <span>Download Resume</span>
+            </a>
+
+            <a href="#contact" className="btn btn-outline hero-discuss-btn">
+              <Sparkles size={16} className="sparkle-icon" />
+              <span>Let's Discuss a Project</span>
             </a>
           </div>
 
-          {/* Socials & Direct Contact */}
+          {/* Socials & Quick Meta */}
           <div className="hero-socials">
             <a
               href={personalInfo.linkedIn}
@@ -126,6 +155,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="social-icon-link"
               aria-label="Athul Krishna's LinkedIn Profile"
+              title="LinkedIn"
             >
               <Linkedin size={20} />
             </a>
@@ -135,6 +165,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="social-icon-link"
               aria-label="Athul Krishna's GitHub Profile"
+              title="GitHub"
             >
               <Github size={20} />
             </a>
@@ -142,21 +173,22 @@ export default function Hero() {
               href={`mailto:${personalInfo.email}`}
               className="social-icon-link"
               aria-label="Send email to Athul Krishna"
+              title="Email"
             >
               <Mail size={20} />
             </a>
             <span className="hero-social-divider"></span>
-            <span className="hero-experience-quick">1+ Year Hands-on Enterprise Experience</span>
+            <span className="hero-experience-quick">1+ Year Enterprise Experience</span>
           </div>
         </div>
 
-        {/* Right Column: Professional Portrait */}
+        {/* Right Column: Professional Portrait Frame */}
         <div className="hero-portrait-column">
           <div className="hero-portrait-glow"></div>
           <div className="hero-portrait-frame">
             <img
               src="/images/athul-profile.png"
-              alt="Athul Krishna M S - Java Developer"
+              alt="Athul Krishna - Java Full Stack Developer"
               className="hero-portrait-image"
               loading="eager"
             />
@@ -247,4 +279,3 @@ export default function Hero() {
     </section>
   );
 }
-

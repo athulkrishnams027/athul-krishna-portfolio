@@ -5,7 +5,7 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.85fr;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
   gap: 48px;
   align-items: start;
   margin-bottom: 56px;
@@ -14,28 +14,64 @@
 .about-text-column {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+}
+
+.about-intro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  border-radius: var(--radius-full);
+  color: var(--text-teal);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.intro-badge-icon {
+  color: var(--accent-secondary);
+  flex-shrink: 0;
 }
 
 .about-subheading {
-  font-size: 1.5rem;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
   color: #f1f5f9;
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.35;
+  letter-spacing: -0.02em;
 }
 
 .about-paragraph {
-  font-size: 1rem;
+  font-size: 1.025rem;
   line-height: 1.75;
   color: var(--text-secondary);
   margin-bottom: 16px;
+}
+
+.about-strengths-block {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.strengths-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 14px;
 }
 
 .about-strengths-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 16px;
 }
 
 .strength-item {
@@ -43,7 +79,7 @@
   align-items: center;
   gap: 12px;
   font-size: 0.95rem;
-  color: #e2e8f0;
+  color: #cbd5e1;
   font-weight: 500;
 }
 
@@ -57,6 +93,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 0;
 }
 
 .stats-cards-grid {
@@ -78,12 +115,13 @@
 }
 
 .stat-card:hover {
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.1);
   transform: translateY(-2px);
 }
 
 .stat-value {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--accent-bright);
   font-family: var(--font-mono);
@@ -91,7 +129,7 @@
 }
 
 .stat-label {
-  font-size: 0.825rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 500;
   text-transform: uppercase;
@@ -115,7 +153,7 @@
 .about-photo-wrapper {
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 175px;
   overflow: hidden;
 }
 
@@ -136,26 +174,26 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(8, 12, 20, 0.1) 0%,
-    rgba(8, 12, 20, 0.5) 50%,
-    rgba(8, 12, 20, 0.9) 100%
+    rgba(6, 9, 17, 0.1) 0%,
+    rgba(6, 9, 17, 0.5) 50%,
+    rgba(6, 9, 17, 0.92) 100%
   );
   pointer-events: none;
 }
 
 .about-photo-tag {
   position: absolute;
-  bottom: 10px;
-  left: 12px;
-  right: 12px;
+  bottom: 12px;
+  left: 14px;
+  right: 14px;
   display: flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.775rem;
   color: #f1f5f9;
   z-index: 2;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .about-photo-indicator {
@@ -168,8 +206,8 @@
 }
 
 .about-quote-card {
-  background: linear-gradient(145deg, rgba(16, 185, 129, 0.08) 0%, rgba(8, 12, 20, 0.8) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: linear-gradient(145deg, rgba(16, 185, 129, 0.08) 0%, rgba(10, 15, 29, 0.95) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.22);
   border-radius: var(--radius-lg);
   padding: 24px;
   position: relative;
@@ -179,7 +217,7 @@
   font-size: 0.95rem;
   font-style: italic;
   color: #e2e8f0;
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 16px;
 }
 
@@ -199,70 +237,97 @@
   background-color: var(--accent-primary);
 }
 
-/* Pillars Grid */
-.about-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* Technical Interests Cards */
+.technical-interests-wrapper {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border-subtle);
 }
 
-.pillar-card {
-  padding: 24px;
+.interests-header-row {
+  margin-bottom: 28px;
+}
+
+.interests-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  color: var(--text-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.interests-title {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.interest-card {
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
 }
 
-.pillar-icon-box {
-  width: 44px;
-  height: 44px;
+.interest-card:hover {
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.12);
+  transform: translateY(-3px);
+}
+
+.interest-icon-box {
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-md);
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-bright);
-  margin-bottom: 4px;
+  color: var(--text-teal);
 }
 
-.pillar-title {
+.interest-card-title {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-.pillar-description {
+.interest-card-desc {
   font-size: 0.885rem;
   color: var(--text-secondary);
   line-height: 1.55;
 }
 
+/* Responsive */
 @media (max-width: 1024px) {
   .about-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
-  .about-pillars-grid {
+
+  .interests-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
 }
 
-@media (max-width: 868px) {
-  .about-grid {
+@media (max-width: 640px) {
+  .interests-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .about-pillars-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-subheading {
-    font-size: 1.25rem;
+    gap: 14px;
   }
 
   .stats-cards-grid {
@@ -270,19 +335,14 @@
   }
 
   .stat-card {
-    padding: 14px 12px;
+    padding: 16px 14px;
   }
 
   .stat-value {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
   }
 
   .about-quote-card {
     padding: 18px 16px;
   }
-
-  .strength-item {
-    font-size: 0.875rem;
-  }
 }
-

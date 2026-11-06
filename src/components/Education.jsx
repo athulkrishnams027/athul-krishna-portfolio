@@ -7,7 +7,9 @@ import {
   CheckCircle2,
   BookOpen,
   Trophy,
-  ExternalLink
+  ExternalLink,
+  Milestone,
+  Sparkles
 } from 'lucide-react';
 import { education, certifications, achievements } from '../data/portfolioData';
 import './Education.css';
@@ -19,12 +21,12 @@ export default function Education() {
         {/* Section Header */}
         <div className="section-header">
           <div className="section-tag">
-            <GraduationCap size={14} />
-            <span>Academic &amp; Professional Growth</span>
+            <Milestone size={14} />
+            <span>Foundations &amp; Milestones</span>
           </div>
-          <h2 className="section-title">Education &amp; Credentials</h2>
+          <h2 className="section-title">Developer Journey &amp; Education</h2>
           <p className="section-description">
-            Academic qualifications in Computer Science, professional certifications in Java Microservices, and institutional leadership.
+            Academic foundations in Computer Science and Engineering, professional industry certifications, and leadership milestones shaping my development journey.
           </p>
         </div>
 
@@ -35,7 +37,7 @@ export default function Education() {
               <div className="column-icon-box">
                 <GraduationCap size={20} />
               </div>
-              <h3 className="column-heading">Education History</h3>
+              <h3 className="column-heading">Academic Education</h3>
             </div>
 
             <div className="education-timeline-list">
@@ -70,7 +72,7 @@ export default function Education() {
               <div className="column-icon-box">
                 <Award size={20} />
               </div>
-              <h3 className="column-heading">Certifications</h3>
+              <h3 className="column-heading">Technical Certifications</h3>
             </div>
 
             <div className="certifications-grid">
@@ -96,7 +98,7 @@ export default function Education() {
               <div className="column-icon-box">
                 <Trophy size={20} />
               </div>
-              <h3 className="column-heading">Leadership &amp; Achievements</h3>
+              <h3 className="column-heading">Leadership &amp; Institutional Milestones</h3>
             </div>
 
             <div className="achievements-list">
@@ -116,4 +118,3 @@ export default function Education() {
     </section>
   );
 }
-

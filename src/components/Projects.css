@@ -1,5 +1,6 @@
 .projects-section {
   background-color: var(--bg-primary);
+  position: relative;
 }
 
 .projects-grid {
@@ -25,7 +26,7 @@
 .project-thumbnail-wrapper {
   position: relative;
   margin: -30px -30px 22px -30px;
-  height: 185px;
+  height: 195px;
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -48,9 +49,9 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(6, 9, 17, 0.1) 0%,
-    rgba(6, 9, 17, 0.4) 50%,
-    rgba(6, 9, 17, 0.85) 100%
+    rgba(6, 9, 17, 0.05) 0%,
+    rgba(6, 9, 17, 0.45) 55%,
+    rgba(6, 9, 17, 0.92) 100%
   );
   pointer-events: none;
 }
@@ -82,7 +83,7 @@
 .project-card:hover {
   border-color: rgba(16, 185, 129, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 24px rgba(16, 185, 129, 0.14);
 }
 
 .project-card-top {
@@ -118,7 +119,7 @@
 .badge-govt {
   background: rgba(234, 179, 8, 0.1);
   color: #facc15;
-  border: 1px solid rgba(234, 179, 8, 0.25);
+  border: 1px solid rgba(234, 179, 8, 0.28);
   font-size: 0.75rem;
   font-family: var(--font-mono);
 }
@@ -142,13 +143,55 @@
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
+}
+
+/* Key Features Quick Preview */
+.project-features-preview {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+}
+
+.features-preview-title {
+  display: block;
+  font-size: 0.775rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.features-preview-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feature-preview-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+
+.feature-check {
+  color: var(--accent-bright);
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .project-card-bottom {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   padding-top: 18px;
   border-top: 1px solid var(--border-subtle);
 }
@@ -237,7 +280,7 @@
   }
   .project-thumbnail-wrapper {
     margin: -24px -20px 20px -20px;
-    height: 170px;
+    height: 175px;
   }
 }
 
@@ -254,7 +297,7 @@
   }
   .project-thumbnail-wrapper {
     margin: -20px -16px 16px -16px;
-    height: 155px;
+    height: 160px;
   }
 
   .project-title {
@@ -280,4 +323,3 @@
     font-size: 0.8rem;
   }
 }
-

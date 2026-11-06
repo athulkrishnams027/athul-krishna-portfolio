@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, MapPin, CheckCircle, Award } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, CheckCircle, Award, Sparkles } from 'lucide-react';
 import { experiences } from '../data/portfolioData';
 import './Experience.css';
 
@@ -11,11 +11,11 @@ export default function Experience() {
         <div className="section-header">
           <div className="section-tag">
             <Briefcase size={14} />
-            <span>Career Journey</span>
+            <span>Career Milestones</span>
           </div>
           <h2 className="section-title">Professional Experience</h2>
           <p className="section-description">
-            Hands-on software development experience across enterprise Kerala Government projects and structured full-stack internship training.
+            Hands-on software development experience across mission-critical Kerala Government enterprise systems, full-stack application internships, and technical community leadership.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function Experience() {
                         <span className="badge badge-accent">{exp.type}</span>
                         {isKeltron && (
                           <span className="badge badge-live">
-                            <span className="live-dot"></span> Live Enterprise
+                            <span className="live-dot"></span> Live Enterprise Production
                           </span>
                         )}
                       </div>
@@ -77,7 +77,7 @@ export default function Experience() {
 
                   {/* Tech stack tags */}
                   <div className="experience-tech-row">
-                    <span className="tech-label">Technologies:</span>
+                    <span className="tech-label">Core Stack:</span>
                     <div className="tech-tags-list">
                       {exp.technologies.map((tech, tIdx) => (
                         <span key={tIdx} className="badge badge-tech">
@@ -95,4 +95,3 @@ export default function Experience() {
     </section>
   );
 }
-

@@ -5,51 +5,16 @@ import {
   Database,
   Terminal,
   Bug,
-  BookOpen,
   ShieldCheck,
-  CheckCircle2
+  CheckCircle2,
+  Compass,
+  Cpu,
+  Sparkles
 } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import { personalInfo, technicalInterests } from '../data/portfolioData';
 import './About.css';
 
-const highlights = [
-  {
-    icon: Server,
-    title: 'Enterprise Java & Spring Boot',
-    description:
-      'Hands-on experience designing RESTful APIs, business service layers, and data access with Spring Data JPA and Hibernate.'
-  },
-  {
-    icon: Layers,
-    title: 'Microservices Architecture',
-    description:
-      'Experience with distributed service patterns, API Gateway, Eureka service discovery, and centralized configurations.'
-  },
-  {
-    icon: Database,
-    title: 'Relational Database Design',
-    description:
-      'Working with PostgreSQL and MySQL for structured schema design, transaction integrity, indexing, and complex queries.'
-  },
-  {
-    icon: Bug,
-    title: 'Live Enterprise Support',
-    description:
-      'Investigated and resolved 80+ real-world support and development tasks for Kerala Government production applications.'
-  },
-  {
-    icon: Terminal,
-    title: 'Full-Stack Integration',
-    description:
-      'Connecting robust Spring Boot backends with modern React frontends, dynamic forms, file uploads, and state hooks.'
-  },
-  {
-    icon: BookOpen,
-    title: 'Maintainable Engineering',
-    description:
-      'Committed to clean architecture, MVC patterns, disciplined Git version control, and continuous skill refinement.'
-  }
-];
+const interestIcons = [Layers, Server, Database, Terminal];
 
 export default function About() {
   return (
@@ -63,15 +28,21 @@ export default function About() {
           </div>
           <h2 className="section-title">About Me</h2>
           <p className="section-description">
-            A backend-focused Java Developer building scalable enterprise systems and modern web applications.
+            A Java Full Stack Developer dedicated to building scalable backend microservices, resilient relational databases, and clean modern web interfaces.
           </p>
         </div>
 
-        {/* Narrative & Stats */}
+        {/* Narrative & Stats Grid */}
         <div className="about-grid">
+          {/* Left Column: Narrative & Strengths */}
           <div className="about-text-column">
+            <div className="about-intro-badge">
+              <Sparkles size={14} className="intro-badge-icon" />
+              <span>Engineering Scalable &amp; Maintainable Software</span>
+            </div>
+
             <h3 className="about-subheading">
-              Engineering Scalable Solutions with a Backend Focus
+              Backend-First Mindset with End-to-End Full Stack Capability
             </h3>
 
             {personalInfo.bio.map((paragraph, idx) => (
@@ -80,28 +51,33 @@ export default function About() {
               </p>
             ))}
 
-            <div className="about-strengths-list">
-              <div className="strength-item">
-                <CheckCircle2 size={18} className="strength-icon" />
-                <span>Enterprise Government Application Experience (Keltron ITBG)</span>
-              </div>
-              <div className="strength-item">
-                <CheckCircle2 size={18} className="strength-icon" />
-                <span>RESTful Web Services &amp; Microservices Architecture</span>
-              </div>
-              <div className="strength-item">
-                <CheckCircle2 size={18} className="strength-icon" />
-                <span>Relational Persistence with PostgreSQL, MySQL &amp; JPA</span>
-              </div>
-              <div className="strength-item">
-                <CheckCircle2 size={18} className="strength-icon" />
-                <span>Frontend Integration with React.js &amp; Bootstrap</span>
+            {/* Core Career Strengths */}
+            <div className="about-strengths-block">
+              <h4 className="strengths-title">Core Competencies &amp; Focus Areas:</h4>
+              <div className="about-strengths-list">
+                <div className="strength-item">
+                  <CheckCircle2 size={18} className="strength-icon" />
+                  <span>Government Enterprise Application Engineering (Keltron ITBG)</span>
+                </div>
+                <div className="strength-item">
+                  <CheckCircle2 size={18} className="strength-icon" />
+                  <span>Spring Boot RESTful APIs &amp; Distributed Microservices</span>
+                </div>
+                <div className="strength-item">
+                  <CheckCircle2 size={18} className="strength-icon" />
+                  <span>Relational Persistence with PostgreSQL, MySQL &amp; JPA/Hibernate</span>
+                </div>
+                <div className="strength-item">
+                  <CheckCircle2 size={18} className="strength-icon" />
+                  <span>Modern React Frontend Integration &amp; Dynamic State Management</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Quick Metrics & Pillars */}
+          {/* Right Column: Stats, Workstation Visual & Quote */}
           <div className="about-stats-column">
+            {/* Verified Metrics Cards */}
             <div className="stats-cards-grid">
               {personalInfo.stats.map((stat, i) => (
                 <div key={i} className="stat-card">
@@ -111,52 +87,62 @@ export default function About() {
               ))}
             </div>
 
-            {/* Subtle Engineering & Workstation Photography */}
+            {/* Workstation Photography Card */}
             <div className="about-photo-card card">
               <div className="about-photo-wrapper">
                 <img
                   src="/images/about-tech-developer.webp"
-                  alt="Software development workstation displaying modern programming environment"
+                  alt="Modern software development workstation with dual monitors and IDE"
                   className="about-tech-photo"
                   loading="lazy"
                 />
                 <div className="about-photo-overlay"></div>
                 <div className="about-photo-tag">
                   <span className="about-photo-indicator"></span>
-                  <span>Modern Software Development Workstation</span>
+                  <span>Enterprise Software Engineering Workstation</span>
                 </div>
               </div>
             </div>
 
+            {/* Professional Summary Quote Card */}
             <div className="about-quote-card">
               <p className="about-quote-text">
-                "Java Developer with 1+ year of hands-on experience building and maintaining Java and Spring Boot applications with REST web services, backed by relational databases (PostgreSQL / MySQL) and SQL. Comfortable on the front end with HTML, CSS, JavaScript and React.js. Experienced in developing, debugging and supporting live enterprise applications for the Kerala Government."
+                "Experienced in developing, debugging, and supporting live enterprise applications for the Kerala Government. I combine rigorous server-side Java architecture with practical React frontend development to deliver dependable software."
               </p>
               <div className="about-quote-author">
                 <div className="quote-author-dot"></div>
-                <span>Athul Krishna M S — Java Developer</span>
+                <span>Athul Krishna — Java Full Stack Developer</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Core Pillars / Competencies Grid */}
-        <div className="about-pillars-grid">
-          {highlights.map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <div key={index} className="pillar-card card">
-                <div className="pillar-icon-box">
-                  <IconComponent size={22} />
+        {/* Technical Interests & Career Focus Cards */}
+        <div className="technical-interests-wrapper">
+          <div className="interests-header-row">
+            <div className="interests-tag">
+              <Compass size={15} />
+              <span>Specialized Technical Interests</span>
+            </div>
+            <h3 className="interests-title">Where I Focus My Engineering Energy</h3>
+          </div>
+
+          <div className="interests-grid">
+            {technicalInterests.map((interest, idx) => {
+              const IconComp = interestIcons[idx % interestIcons.length];
+              return (
+                <div key={idx} className="interest-card card">
+                  <div className="interest-icon-box">
+                    <IconComp size={20} />
+                  </div>
+                  <h4 className="interest-card-title">{interest.title}</h4>
+                  <p className="interest-card-desc">{interest.description}</p>
                 </div>
-                <h4 className="pillar-title">{item.title}</h4>
-                <p className="pillar-description">{item.description}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

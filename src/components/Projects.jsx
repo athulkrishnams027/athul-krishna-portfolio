@@ -6,9 +6,10 @@ import {
   Server,
   Layers,
   Building2,
-  FileCode2,
   Lock,
-  ArrowUpRight
+  ArrowUpRight,
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
@@ -30,9 +31,9 @@ export default function Projects() {
         <div className="section-header">
           <div className="section-tag">
             <FolderGit2 size={14} />
-            <span>Featured Work</span>
+            <span>Featured Software</span>
           </div>
-          <h2 className="section-title">Projects &amp; Enterprise Systems</h2>
+          <h2 className="section-title">Projects &amp; Case Studies</h2>
           <p className="section-description">
             Production-grade Kerala Government enterprise platforms, microservices architecture, and full-stack software built with Spring Boot, PostgreSQL, and React.
           </p>
@@ -82,6 +83,21 @@ export default function Projects() {
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-subtitle">{project.subtitle}</p>
                   <p className="project-description">{project.shortDescription}</p>
+
+                  {/* Key Features Quick Preview */}
+                  {project.features && (
+                    <div className="project-features-preview">
+                      <span className="features-preview-title">Key Capabilities:</span>
+                      <ul className="features-preview-list">
+                        {project.features.slice(0, 3).map((feat, fIdx) => (
+                          <li key={fIdx} className="feature-preview-item">
+                            <CheckCircle2 size={14} className="feature-check" />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
 
                 <div className="project-card-bottom">
@@ -104,9 +120,9 @@ export default function Projects() {
                     <button
                       className="btn btn-secondary btn-sm project-inspect-btn"
                       onClick={() => setSelectedProject(project)}
-                      aria-label={`View detailed breakdown of ${project.title}`}
+                      aria-label={`View detailed case study of ${project.title}`}
                     >
-                      <span>View Details</span>
+                      <span>View Case Study</span>
                       <ArrowUpRight size={15} />
                     </button>
 
@@ -140,7 +156,7 @@ export default function Projects() {
         <div className="projects-note-box">
           <Lock size={16} className="projects-note-icon" />
           <p>
-            <strong>Note on Enterprise Software:</strong> Government projects developed at Keltron ITBG are governed by confidentiality agreements and security protocols. Live demo links and proprietary source code cannot be shared publicly, but system architecture and design principles can be discussed during interviews.
+            <strong>Note on Enterprise Software:</strong> Government projects developed at Keltron ITBG are governed by confidentiality agreements and security protocols. Live demo links and proprietary source code cannot be shared publicly, but system architecture, database design, and REST API principles can be discussed during interviews.
           </p>
         </div>
       </div>
@@ -155,4 +171,3 @@ export default function Projects() {
     </section>
   );
 }
-

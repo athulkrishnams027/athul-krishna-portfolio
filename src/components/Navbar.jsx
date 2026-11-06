@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileDown, Terminal } from 'lucide-react';
+import { Menu, X, FileDown, Terminal, Sparkles } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import './Navbar.css';
 
@@ -14,7 +14,7 @@ export default function Navbar() {
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Services', href: '#services' },
-    { name: 'Education', href: '#education' },
+    { name: 'Journey', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -44,7 +44,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent scroll when mobile menu is open
+  // Prevent background scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -74,16 +74,20 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="desktop-nav" aria-label="Main Navigation">
           <ul className="nav-list">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  className={`nav-link ${activeSection === link.href.substring(1) ? 'active' : ''}`}
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const targetId = link.href.substring(1);
+              const isActive = activeSection === targetId;
+              return (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className={`nav-link ${isActive ? 'active' : ''}`}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           <div className="nav-actions">
@@ -113,18 +117,23 @@ export default function Navbar() {
         <div className={`mobile-nav-drawer ${isOpen ? 'open' : ''}`}>
           <div className="mobile-nav-inner">
             <ul className="mobile-nav-list">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className={`mobile-nav-link ${activeSection === link.href.substring(1) ? 'active' : ''}`}
-                    onClick={closeMenu}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const targetId = link.href.substring(1);
+                const isActive = activeSection === targetId;
+                return (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className={`mobile-nav-link ${isActive ? 'active' : ''}`}
+                      onClick={closeMenu}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
+
             <div className="mobile-nav-footer">
               <a
                 href={personalInfo.resumePath}
@@ -146,4 +155,3 @@ export default function Navbar() {
     </header>
   );
 }
-

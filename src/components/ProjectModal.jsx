@@ -8,7 +8,10 @@ import {
   CheckCircle2,
   Github,
   Lock,
-  ExternalLink
+  ExternalLink,
+  Boxes,
+  Sparkles,
+  Info
 } from 'lucide-react';
 import './ProjectModal.css';
 
@@ -90,33 +93,71 @@ export default function ProjectModal({ project, onClose }) {
               <div className="modal-banner-overlay"></div>
               <div className="modal-banner-badge">
                 <span className="banner-dot"></span>
-                <span>{project.isGovernment ? 'Government Enterprise Architecture & Telemetry' : 'Full-Stack Containerization & Deployment'}</span>
+                <span>{project.isGovernment ? 'Government Enterprise Architecture & Telemetry' : 'Full-Stack Architecture & Environment'}</span>
               </div>
             </div>
           )}
 
           {/* Confidentiality notice for Government apps */}
-          {project.isGovernment && (
+          {project.isGovernment ? (
             <div className="modal-confidential-notice">
               <Lock size={18} className="notice-icon" />
               <div>
-                <strong>Enterprise Government Platform</strong>
+                <strong>Government Enterprise Platform — Keltron ITBG</strong>
                 <p>
-                  Proprietary system developed for the Government of Kerala. Internal architectures, sensitive configurations, and source code are strictly governed and not distributed publicly.
+                  Proprietary system developed for the Government of Kerala. Internal architectures, sensitive configurations, and source code are governed by strict confidentiality agreements and cannot be distributed publicly.
                 </p>
               </div>
             </div>
+          ) : (
+            <div className="modal-visual-note">
+              <Info size={16} className="visual-note-icon" />
+              <span>Visual mockup illustrates the application architecture and developer workstation environment.</span>
+            </div>
           )}
 
-          {/* Detailed Narrative */}
+          {/* Overview */}
           <div className="modal-section">
             <h4 className="modal-section-heading">Overview</h4>
             <p className="modal-description-text">{project.fullDescription}</p>
           </div>
 
+          {/* System Modules Breakdown */}
+          {project.modules && (
+            <div className="modal-section">
+              <h4 className="modal-section-heading">System Modules &amp; Subsystems</h4>
+              <div className="modal-modules-grid">
+                {project.modules.map((mod, mIdx) => (
+                  <div key={mIdx} className="modal-module-card">
+                    <div className="module-card-header">
+                      <Boxes size={16} className="module-icon" />
+                      <h5 className="module-name">{mod.name}</h5>
+                    </div>
+                    <p className="module-desc">{mod.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Key Features Breakdown */}
+          {project.features && (
+            <div className="modal-section">
+              <h4 className="modal-section-heading">Key Features &amp; Functional Workflows</h4>
+              <ul className="modal-list">
+                {project.features.map((feat, fIdx) => (
+                  <li key={fIdx} className="modal-list-item">
+                    <CheckCircle2 size={16} className="modal-bullet-icon" />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Responsibilities */}
           <div className="modal-section">
-            <h4 className="modal-section-heading">Key Implementation Responsibilities</h4>
+            <h4 className="modal-section-heading">Key Engineering Responsibilities</h4>
             <ul className="modal-list">
               {project.responsibilities.map((resp, idx) => (
                 <li key={idx} className="modal-list-item">
@@ -170,7 +211,7 @@ export default function ProjectModal({ project, onClose }) {
           ) : (
             <div className="modal-private-note">
               <Lock size={14} />
-              <span>Restricted Repository / Enterprise Codebase</span>
+              <span>Internal Enterprise Codebase (Confidential)</span>
             </div>
           )}
 
@@ -182,4 +223,3 @@ export default function ProjectModal({ project, onClose }) {
     </div>
   );
 }
-

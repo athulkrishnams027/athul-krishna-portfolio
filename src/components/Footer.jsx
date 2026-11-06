@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Linkedin, Github, Mail, Terminal, Heart } from 'lucide-react';
+import { ArrowUp, Linkedin, Github, Mail, Terminal } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import './Footer.css';
 
@@ -27,7 +27,7 @@ export default function Footer() {
             </a>
             <p className="footer-role">{personalInfo.title}</p>
             <p className="footer-tagline">
-              Building reliable backend systems, microservices, and modern web applications with clean architecture.
+              Building scalable backend applications, microservices, and practical software solutions using Java, Spring Boot, and React.
             </p>
           </div>
 
@@ -38,13 +38,14 @@ export default function Footer() {
               <li><a href="#skills">Skills</a></li>
               <li><a href="#experience">Experience</a></li>
               <li><a href="#projects">Projects</a></li>
-              <li><a href="#education">Education</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#education">Journey</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
 
           <div className="footer-connect-col">
-            <h5 className="footer-col-title">Connect</h5>
+            <h5 className="footer-col-title">Connect &amp; Social</h5>
             <div className="footer-social-row">
               <a
                 href={personalInfo.linkedIn}
@@ -52,6 +53,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="footer-social-btn"
                 aria-label="Athul Krishna's LinkedIn"
+                title="LinkedIn Profile"
               >
                 <Linkedin size={18} />
               </a>
@@ -61,6 +63,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="footer-social-btn"
                 aria-label="Athul Krishna's GitHub"
+                title="GitHub Profile"
               >
                 <Github size={18} />
               </a>
@@ -68,6 +71,7 @@ export default function Footer() {
                 href={`mailto:${personalInfo.email}`}
                 className="footer-social-btn"
                 aria-label="Send email to Athul Krishna"
+                title="Send Email"
               >
                 <Mail size={18} />
               </a>
@@ -90,4 +94,3 @@ export default function Footer() {
     </footer>
   );
 }
-
