@@ -7,6 +7,7 @@ export const personalInfo = {
   linkedIn: "https://linkedin.com/in/athulkrishnams",
   github: "https://github.com/athulkrishnams027",
   resumePath: "/Athul_Krishna_Resume.pdf",
+  profileImage: "/images/athul-profile.png",
   headline: "Building Reliable Software with Java.",
   supportingText:
     "I'm a Java Developer focused on building maintainable backend applications, REST APIs, and microservices using Java and Spring Boot, with React experience for full-stack development.",
@@ -177,7 +178,7 @@ export const projects = [
     repoAvailable: false,
     demoAvailable: false,
     image: "/images/project-animal-husbandry.webp",
-    imageAlt: "Enterprise server rack and microservices infrastructure for Kerala Government animal husbandry services",
+    imageAlt: "Realistic animal husbandry management and veterinary administration workstation with digital registry dashboard",
     shortDescription:
       "A microservices-based enterprise platform covering Citizen, Pet Shop, and Dog Breeder modules with end-to-end registration and approval workflows.",
     fullDescription:
@@ -219,7 +220,7 @@ export const projects = [
     repoAvailable: false,
     demoAvailable: false,
     image: "/images/project-analytical-lab.webp",
-    imageAlt: "Analytical systems data and laboratory enterprise management infrastructure",
+    imageAlt: "Modern analytical chemistry laboratory with precision spectrometry instrumentation and digital LIMS interface",
     shortDescription:
       "An enterprise microservices platform managing laboratory procurement, chemical inventory, asset tracking, and maintenance service workflows.",
     fullDescription:
@@ -262,7 +263,7 @@ export const projects = [
     githubUrl: "https://github.com/athulkrishnams027",
     demoAvailable: false,
     image: "/images/project-student-tracker.webp",
-    imageAlt: "Containerized Docker terminal and Spring Boot backend console environment",
+    imageAlt: "Academic student record management and attendance tracking dashboard on developer workstation",
     shortDescription:
       "A complete student record management system with Spring Boot REST APIs, React client, custom exception handling, and multi-stage Docker deployment.",
     fullDescription:

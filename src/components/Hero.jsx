@@ -148,92 +148,97 @@ export default function Hero() {
             <span className="hero-social-divider"></span>
             <span className="hero-experience-quick">1+ Year Hands-on Enterprise Experience</span>
           </div>
+        </div>
 
-          {/* Authentic Programming Photography Card */}
-          <div className="hero-photo-card">
-            <div className="hero-photo-wrapper">
-              <img
-                src="/images/hero-code-workspace.webp"
-                alt="Close-up photograph of computer monitor displaying real Java backend source code"
-                className="hero-coding-photo"
-                loading="eager"
-              />
-              <div className="hero-photo-gradient"></div>
-              <div className="hero-photo-meta">
-                <span className="hero-photo-dot"></span>
-                <span className="hero-photo-label">Enterprise Java &amp; Spring Boot Development</span>
-              </div>
+        {/* Right Column: Professional Portrait */}
+        <div className="hero-portrait-column">
+          <div className="hero-portrait-glow"></div>
+          <div className="hero-portrait-frame">
+            <img
+              src="/images/athul-profile.png"
+              alt="Athul Krishna M S - Java Developer"
+              className="hero-portrait-image"
+              loading="eager"
+            />
+            {/* Status & Skill Overlay Badges */}
+            <div className="portrait-badge portrait-badge-top">
+              <span className="portrait-pulse-dot"></span>
+              <span>Software Apprentice</span>
+            </div>
+            <div className="portrait-badge portrait-badge-bottom">
+              <Code2 size={15} className="portrait-badge-icon" />
+              <span>Java &amp; Spring Boot</span>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Right Column: Code Editor Illustration */}
-        <div className="hero-visual">
-          <div className="code-editor-wrapper">
-            <div className="code-editor-glow"></div>
-            <div className="code-editor-card">
-              {/* Header Bar */}
-              <div className="code-editor-header">
-                <div className="window-controls">
-                  <span className="dot red"></span>
-                  <span className="dot yellow"></span>
-                  <span className="dot green"></span>
-                </div>
+      {/* Interactive Spring Boot Code Editor Showcase */}
+      <div className="container hero-code-showcase">
+        <div className="code-editor-wrapper">
+          <div className="code-editor-glow"></div>
+          <div className="code-editor-card">
+            {/* Header Bar */}
+            <div className="code-editor-header">
+              <div className="window-controls">
+                <span className="dot red"></span>
+                <span className="dot yellow"></span>
+                <span className="dot green"></span>
+              </div>
 
-                {/* Tabs */}
-                <div className="code-editor-tabs">
-                  <button
-                    className={`code-tab ${activeTab === 'controller' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('controller')}
-                  >
-                    <Code2 size={13} />
-                    <span>PetShopController.java</span>
-                  </button>
-                  <button
-                    className={`code-tab ${activeTab === 'service' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('service')}
-                  >
-                    <Layers size={13} />
-                    <span>LabRequisitionService.java</span>
-                  </button>
-                </div>
-
-                {/* Action button */}
+              {/* Tabs */}
+              <div className="code-editor-tabs">
                 <button
-                  className="code-copy-btn"
-                  onClick={handleCopyCode}
-                  title="Copy Java code snippet"
-                  aria-label="Copy snippet"
+                  className={`code-tab ${activeTab === 'controller' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('controller')}
                 >
-                  {copied ? <Check size={14} className="copied-icon" /> : <Copy size={14} />}
+                  <Code2 size={13} />
+                  <span>PetShopController.java</span>
+                </button>
+                <button
+                  className={`code-tab ${activeTab === 'service' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('service')}
+                >
+                  <Layers size={13} />
+                  <span>LabRequisitionService.java</span>
                 </button>
               </div>
 
-              {/* Code Body */}
-              <div className="code-editor-body">
-                <div className="code-line-numbers" aria-hidden="true">
-                  {currentSnippet.code.split('\n').map((_, index) => (
-                    <span key={index}>{index + 1}</span>
-                  ))}
-                </div>
-                <pre className="code-content">
-                  <code>{currentSnippet.code}</code>
-                </pre>
-              </div>
+              {/* Action button */}
+              <button
+                className="code-copy-btn"
+                onClick={handleCopyCode}
+                title="Copy Java code snippet"
+                aria-label="Copy snippet"
+              >
+                {copied ? <Check size={14} className="copied-icon" /> : <Copy size={14} />}
+              </button>
+            </div>
 
-              {/* Footer Meta */}
-              <div className="code-editor-footer">
-                <div className="editor-status-item">
-                  <span className="status-bullet"></span>
-                  <span>Spring Boot 3.x</span>
-                </div>
-                <div className="editor-status-item">
-                  <Cpu size={12} />
-                  <span>Microservices Architecture</span>
-                </div>
-                <div className="editor-status-item">
-                  <span>UTF-8</span>
-                </div>
+            {/* Code Body */}
+            <div className="code-editor-body">
+              <div className="code-line-numbers" aria-hidden="true">
+                {currentSnippet.code.split('\n').map((_, index) => (
+                  <span key={index}>{index + 1}</span>
+                ))}
+              </div>
+              <pre className="code-content">
+                <code>{currentSnippet.code}</code>
+              </pre>
+            </div>
+
+            {/* Footer Meta */}
+            <div className="code-editor-footer">
+              <div className="editor-status-item">
+                <span className="status-bullet"></span>
+                <span>Spring Boot 3.x</span>
+              </div>
+              <div className="editor-status-item">
+                <Cpu size={12} />
+                <span>Microservices Architecture</span>
+              </div>
+              <div className="editor-status-item">
+                <span>UTF-8</span>
               </div>
             </div>
           </div>
