@@ -46,6 +46,30 @@ export default function HomePage() {
     setTimeout(() => setCopiedCode(false), 2000);
   };
 
+  const codeLines = [
+    { num: 1, content: <><span className="tok-ann">@RestController</span></> },
+    { num: 2, content: <><span className="tok-ann">@RequestMapping</span>(<span className="tok-str">"/api/v1/pet-shops"</span>)</> },
+    { num: 3, content: <><span className="tok-ann">@RequiredArgsConstructor</span></> },
+    { num: 4, content: <><span className="tok-kw">public class</span> <span className="tok-type">PetShopController</span> &#123;</> },
+    { num: 5, content: <>&nbsp;</> },
+    { num: 6, content: <>    <span className="tok-kw">private final</span> <span className="tok-type">PetShopRegistrationService</span> registrationService;</> },
+    { num: 7, content: <>&nbsp;</> },
+    { num: 8, content: <>    <span className="tok-ann">@PostMapping</span>(<span className="tok-str">"/register"</span>)</> },
+    { num: 9, content: <>    <span className="tok-ann">@ResponseStatus</span>(<span className="tok-type">HttpStatus</span>.<span className="tok-const">CREATED</span>)</> },
+    { num: 10, content: <>    <span className="tok-kw">public</span> <span className="tok-type">ResponseEntity</span>&lt;<span className="tok-type">RegistrationResponse</span>&gt; <span className="tok-fn">registerPetShop</span>(</> },
+    { num: 11, content: <>            <span className="tok-ann">@Valid</span> <span className="tok-ann">@RequestBody</span> <span className="tok-type">PetShopRegistrationRequest</span> request) &#123;</> },
+    { num: 12, content: <>        <span className="tok-type">RegistrationResponse</span> response = registrationService.<span className="tok-fn">processRegistration</span>(request);</> },
+    { num: 13, content: <>        <span className="tok-kw">return</span> <span className="tok-type">ResponseEntity</span>.<span className="tok-fn">status</span>(<span className="tok-type">HttpStatus</span>.<span className="tok-const">CREATED</span>).<span className="tok-fn">body</span>(response);</> },
+    { num: 14, content: <>    &#125;</> },
+    { num: 15, content: <>&nbsp;</> },
+    { num: 16, content: <>    <span className="tok-ann">@GetMapping</span>(<span className="tok-str">"/&#123;id&#125;/status"</span>)</> },
+    { num: 17, content: <>    <span className="tok-kw">public</span> <span className="tok-type">ResponseEntity</span>&lt;<span className="tok-type">VerificationStatusDto</span>&gt; <span className="tok-fn">getApplicationStatus</span>(</> },
+    { num: 18, content: <>            <span className="tok-ann">@PathVariable</span>(<span className="tok-str">"id"</span>) <span className="tok-type">Long</span> id) &#123;</> },
+    { num: 19, content: <>        <span className="tok-kw">return</span> <span className="tok-type">ResponseEntity</span>.<span className="tok-fn">ok</span>(registrationService.<span className="tok-fn">fetchStatus</span>(id));</> },
+    { num: 20, content: <>    &#125;</> },
+    { num: 21, content: <>&#125;</> }
+  ];
+
   // Featured 3 projects for the homepage
   const featuredProjects = projects.slice(0, 3);
 
@@ -199,10 +223,15 @@ export default function HomePage() {
                 {copiedCode ? <Check size={14} className="copied-icon" /> : <Copy size={14} />}
               </button>
             </div>
-            <div className="code-editor-body">
-              <pre className="code-pre">
-                <code>{codeSample.code}</code>
-              </pre>
+            <div className="code-editor-body" tabIndex={0} aria-label="Spring Boot REST Controller code snippet">
+              <div className="code-lines-wrap">
+                {codeLines.map((line) => (
+                  <div key={line.num} className="code-line">
+                    <span className="line-number" aria-hidden="true">{line.num}</span>
+                    <span className="line-content">{line.content}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="code-editor-footer">
               <span>Spring Boot 3.x REST Controller</span>

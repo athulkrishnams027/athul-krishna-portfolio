@@ -115,8 +115,8 @@
 }
 
 .stat-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.1);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
   transform: translateY(-2px);
 }
 
@@ -146,8 +146,8 @@
 }
 
 .about-photo-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.1);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(37, 99, 235, 0.1);
 }
 
 .about-photo-wrapper {
@@ -282,8 +282,8 @@
 }
 
 .interest-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
   transform: translateY(-3px);
 }
 
@@ -291,8 +291,8 @@
   width: 42px;
   height: 42px;
   border-radius: var(--radius-md);
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -25,9 +25,9 @@
 }
 
 .service-card:hover {
-  border-color: rgba(16, 185, 129, 0.4);
+  border-color: rgba(37, 99, 235, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 24px rgba(16, 185, 129, 0.14);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 24px rgba(37, 99, 235, 0.14);
 }
 
 /* Service Thumbnail */
@@ -202,7 +202,7 @@
 }
 
 .service-contact-btn:hover {
-  background: rgba(16, 185, 129, 0.15);
+  background: rgba(37, 99, 235, 0.15);
   border-color: var(--accent-primary);
   color: var(--accent-bright);
 }

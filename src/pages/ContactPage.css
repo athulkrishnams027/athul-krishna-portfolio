@@ -118,7 +118,7 @@
 }
 
 .copy-btn {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-card-elevated);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   width: 36px;

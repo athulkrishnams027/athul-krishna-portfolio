@@ -99,12 +99,19 @@
   align-items: center;
   gap: 10px;
   padding: 12px 18px;
-  background: rgba(234, 179, 8, 0.08);
-  border: 1px solid rgba(234, 179, 8, 0.25);
+  background: rgba(217, 119, 6, 0.1);
+  border: 1px solid rgba(217, 119, 6, 0.28);
   border-radius: var(--radius-sm);
-  color: #fef08a;
+  color: #B45309;
   font-size: 0.85rem;
+  font-weight: 500;
   margin-bottom: 24px;
+}
+
+[data-theme="dark"] .github-notice-banner {
+  background: rgba(234, 179, 8, 0.08);
+  border-color: rgba(234, 179, 8, 0.25);
+  color: #fef08a;
 }
 
 .notice-icon {
@@ -194,7 +201,7 @@
   font-family: var(--font-mono);
   font-size: 0.725rem;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card-elevated);
   border: 1px solid var(--border-color);
   padding: 2px 8px;
   border-radius: 9999px;
@@ -261,7 +268,7 @@
 
 .repo-link-btn:hover {
   color: var(--accent-bright);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-card-elevated);
 }
 
 /* Enterprise Note */

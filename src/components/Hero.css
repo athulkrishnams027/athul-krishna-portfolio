@@ -37,8 +37,8 @@
   width: fit-content;
   max-width: 100%;
   padding: 6px 14px;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.28);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.28);
   border-radius: var(--radius-full);
   font-family: var(--font-mono);
   font-size: 0.825rem;
@@ -53,7 +53,7 @@
   height: 8px;
   border-radius: 50%;
   background-color: var(--accent-primary);
-  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
   animation: pulse-dot 2s infinite;
   flex-shrink: 0;
 }
@@ -61,15 +61,15 @@
 @keyframes pulse-dot {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
   }
 }
 
@@ -177,14 +177,14 @@
 .hero-discuss-btn {
   gap: 8px;
   color: var(--text-primary);
-  border-color: rgba(163, 230, 53, 0.35);
+  border-color: rgba(2, 132, 199, 0.35);
 }
 
 .hero-discuss-btn:hover {
   border-color: var(--accent-lime);
   color: var(--accent-lime);
-  background: rgba(163, 230, 53, 0.08);
-  box-shadow: 0 0 20px rgba(163, 230, 53, 0.2);
+  background: rgba(2, 132, 199, 0.08);
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.2);
 }
 
 .sparkle-icon {
@@ -216,7 +216,7 @@
 }
 
 .social-icon-link:hover {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(37, 99, 235, 0.12);
   border-color: var(--accent-primary);
   color: var(--accent-bright);
   transform: translateY(-2px);
@@ -255,7 +255,7 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 65% 45%, rgba(16, 185, 129, 0.22) 0%, rgba(163, 230, 53, 0.08) 45%, transparent 70%);
+  background: radial-gradient(circle at 65% 45%, rgba(37, 99, 235, 0.22) 0%, rgba(2, 132, 199, 0.08) 45%, transparent 70%);
   filter: blur(36px);
   pointer-events: none;
   z-index: 0;
@@ -268,7 +268,7 @@
   aspect-ratio: 4 / 4.7;
   border-radius: 28px;
   overflow: hidden;
-  border: 2px solid rgba(16, 185, 129, 0.38);
+  border: 2px solid rgba(37, 99, 235, 0.38);
   background: var(--bg-card);
   box-shadow: 
     0 24px 60px rgba(0, 0, 0, 0.7),
@@ -282,7 +282,7 @@
   border-color: var(--accent-primary);
   box-shadow: 
     0 30px 70px rgba(0, 0, 0, 0.8),
-    0 0 45px rgba(16, 185, 129, 0.25);
+    0 0 45px rgba(37, 99, 235, 0.25);
 }
 
 .hero-portrait-image {
@@ -308,7 +308,7 @@
   background: rgba(16, 26, 21, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(37, 99, 235, 0.3);
   border-radius: var(--radius-full);
   color: var(--text-primary);
   font-family: var(--font-mono);
@@ -368,7 +368,7 @@
   transform: translate(-50%, -50%);
   width: 90%;
   height: 90%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(163, 230, 53, 0.04) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(2, 132, 199, 0.04) 50%, transparent 75%);
   filter: blur(40px);
   pointer-events: none;
   z-index: 0;
@@ -447,8 +447,8 @@
 
 .code-tab.active {
   color: var(--accent-bright);
-  background: rgba(16, 185, 129, 0.08);
-  border-color: rgba(16, 185, 129, 0.25);
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.25);
 }
 
 .code-copy-btn {

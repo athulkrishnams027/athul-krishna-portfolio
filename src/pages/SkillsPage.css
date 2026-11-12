@@ -94,7 +94,7 @@
   font-family: var(--font-mono);
   font-size: 0.725rem;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-card-elevated);
   border: 1px solid var(--border-color);
   padding: 2px 8px;
   border-radius: 4px;

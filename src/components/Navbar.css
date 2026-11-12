@@ -28,9 +28,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
-/* Brand Logo */
+/* Brand Logo (Left Column) */
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -69,6 +70,7 @@
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .logo-tag {
@@ -78,28 +80,33 @@
   font-family: var(--font-mono);
 }
 
-/* Desktop Navigation */
+/* Desktop Navigation (Centered Column) */
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  flex: 1;
+  padding: 0 10px;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  gap: 6px;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-secondary);
-  padding: 6px 12px;
+  padding: 6px 13px;
   border-radius: var(--radius-sm);
   text-decoration: none;
   transition: all var(--transition-fast);
@@ -154,12 +161,12 @@
   color: inherit;
 }
 
-/* Action Controls (Theme Toggle & Resume Button) */
-.nav-actions {
+/* Desktop Actions (Right Column) */
+.desktop-actions {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 8px;
+  flex-shrink: 0;
 }
 
 /* Theme Toggle Button */
@@ -196,6 +203,10 @@
 .nav-resume-btn {
   padding: 8px 14px;
   font-size: 0.825rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 /* Mobile Controls Wrapper in Header */
@@ -499,9 +510,41 @@
   background: var(--bg-card-elevated);
 }
 
-/* Breakpoint for Navigation */
-@media (max-width: 1024px) {
-  .desktop-nav {
+/* Desktop screen widths scaling (1024px to 1366px) */
+@media (max-width: 1366px) {
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar-container {
+    gap: 12px;
+  }
+  .nav-list {
+    gap: 3px;
+  }
+  .nav-link {
+    padding: 5px 8px;
+    font-size: 0.81rem;
+    gap: 4px;
+  }
+  .logo-tag {
+    display: none;
+  }
+  .nav-resume-btn {
+    padding: 8px 10px;
+  }
+  .nav-resume-btn .resume-label {
+    display: none;
+  }
+}
+
+/* Tablet & Mobile Breakpoint (<= 1023px) */
+@media (max-width: 1023px) {
+  .desktop-nav,
+  .desktop-actions {
     display: none;
   }
   .mobile-header-controls {

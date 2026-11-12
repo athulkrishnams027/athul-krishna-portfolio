@@ -94,7 +94,7 @@
 .workstation-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 13, 11, 0.1) 0%, rgba(8, 13, 11, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.85) 100%);
   pointer-events: none;
 }
 
@@ -107,7 +107,9 @@
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.775rem;
-  color: var(--text-primary);
+  font-weight: 600;
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .workstation-pulse {

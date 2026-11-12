@@ -46,14 +46,14 @@
 
 .timeline-item.highlighted .marker-dot {
   border-color: var(--accent-primary);
-  background: rgba(16, 185, 129, 0.15);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
+  background: rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.35);
 }
 
 .marker-line {
   width: 2px;
   flex-grow: 1;
-  background: linear-gradient(to bottom, rgba(16, 185, 129, 0.4), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(to bottom, rgba(37, 99, 235, 0.4), rgba(255, 255, 255, 0.05));
   margin-top: 8px;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .timeline-item.highlighted .timeline-card {
-  border-color: rgba(16, 185, 129, 0.25);
+  border-color: rgba(37, 99, 235, 0.25);
   background: linear-gradient(145deg, var(--bg-card-elevated) 0%, var(--bg-card) 100%);
 }
 

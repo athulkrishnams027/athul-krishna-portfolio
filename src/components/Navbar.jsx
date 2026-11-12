@@ -222,7 +222,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation (Centered) */}
           <nav className="desktop-nav" aria-label="Main Navigation">
             <ul className="nav-list">
               {navLinks.map((link) => (
@@ -240,33 +240,33 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-
-            <div className="nav-actions">
-              {/* Theme Toggle Button */}
-              <button
-                className="theme-toggle-btn"
-                onClick={toggleTheme}
-                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-              >
-                {theme === 'dark' ? (
-                  <Sun size={18} className="theme-icon sun-icon" />
-                ) : (
-                  <Moon size={18} className="theme-icon moon-icon" />
-                )}
-              </button>
-
-              <a
-                href={personalInfo.resumePath}
-                download="Athul_Krishna_Resume.pdf"
-                className="btn btn-primary btn-sm nav-resume-btn"
-                title="Download Athul Krishna's Resume"
-              >
-                <FileDown size={14} />
-                <span>Resume</span>
-              </a>
-            </div>
           </nav>
+
+          {/* Desktop Actions (Right: Theme Toggle & Resume Button) */}
+          <div className="desktop-actions">
+            <button
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? (
+                <Sun size={18} className="theme-icon sun-icon" />
+              ) : (
+                <Moon size={18} className="theme-icon moon-icon" />
+              )}
+            </button>
+
+            <a
+              href={personalInfo.resumePath}
+              download="Athul_Krishna_Resume.pdf"
+              className="btn btn-primary btn-sm nav-resume-btn"
+              title="Download Athul Krishna's Resume"
+            >
+              <FileDown size={14} />
+              <span className="resume-label">Resume</span>
+            </a>
+          </div>
 
           {/* Mobile Right Controls: Theme Toggle + Hamburger Toggle Button */}
           <div className="mobile-header-controls">
