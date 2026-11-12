@@ -665,3 +665,70 @@
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   CODE BRO DARK MODE OVERRIDES
+   Preserves Violet Brand Identity while matching Dark Mode
+   ========================================================================== */
+[data-theme="dark"] .code-bro-page {
+  --cb-white: #152238;
+  --cb-bg: #0B1220;
+  --cb-surface: #152238;
+  --cb-violet: #8250DF;
+  --cb-violet-dark: #6D28D9;
+  --cb-violet-light: rgba(130, 80, 223, 0.22);
+  --cb-violet-glow: rgba(130, 80, 223, 0.35);
+  --cb-text-primary: #F8FAFC;
+  --cb-text-secondary: #CBD5E1;
+  --cb-text-muted: #94A3B8;
+  --cb-border: #26364D;
+  --cb-border-hover: #8250DF;
+}
+
+[data-theme="dark"] .cb-hero-section {
+  background: linear-gradient(180deg, #0B1220 0%, #171630 100%);
+}
+
+[data-theme="dark"] .cb-pkg-card {
+  background-color: var(--cb-surface);
+}
+
+[data-theme="dark"] .cb-pkg-card-featured {
+  background-color: #191E3B;
+  border-color: #8250DF;
+}
+
+[data-theme="dark"] .cb-matrix-section,
+[data-theme="dark"] .cb-maintenance-section,
+[data-theme="dark"] .cb-addons-section {
+  background-color: #0B1220;
+}
+
+[data-theme="dark"] .cb-matrix-table th {
+  background-color: #152238;
+}
+
+[data-theme="dark"] .cb-matrix-table td {
+  background-color: #111C2E;
+}
+
+[data-theme="dark"] .cb-maint-card,
+[data-theme="dark"] .cb-addon-card {
+  background-color: #152238;
+}
+
+[data-theme="dark"] .cb-addon-card:hover {
+  background-color: #1B2B44;
+}
+
+[data-theme="dark"] .cb-btn-secondary {
+  background-color: #152238;
+  color: var(--cb-text-primary) !important;
+  border-color: var(--cb-border);
+}
+
+[data-theme="dark"] .cb-btn-secondary:hover {
+  background-color: #1B2B44;
+  border-color: var(--cb-violet);
+  color: #C084FC !important;
+}

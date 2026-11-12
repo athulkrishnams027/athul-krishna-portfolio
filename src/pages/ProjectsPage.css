@@ -33,8 +33,9 @@
 .filter-btn.active {
   background: var(--badge-bg);
   border-color: var(--accent-primary);
-  color: var(--accent-bright);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+  color: var(--accent-primary);
+  box-shadow: 0 0 16px var(--glow-blue);
+  font-weight: 600;
 }
 
 /* Confidentiality banner */
@@ -43,7 +44,7 @@
   align-items: flex-start;
   gap: 14px;
   padding: 16px 20px;
-  background: rgba(16, 185, 129, 0.05);
+  background: var(--bg-card-elevated);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   margin-bottom: 40px;

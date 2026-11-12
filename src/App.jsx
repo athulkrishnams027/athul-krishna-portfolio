@@ -4,6 +4,7 @@ import { ArrowUp } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import InteractiveBackground from './components/InteractiveBackground';
 
 // Dedicated Route Pages
 import HomePage from './pages/HomePage';
@@ -51,6 +52,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="portfolio-app">
+        {/* Interactive Live Background - Emerald Motion Environment */}
+        <InteractiveBackground />
+
         {/* Scroll Progress Bar at very top */}
         <div
           className="scroll-progress-bar"

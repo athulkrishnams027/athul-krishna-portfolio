@@ -1,3 +1,8 @@
+/* ==========================================================================
+   NAVBAR & GLOBAL NAVIGATION
+   White & Blue (Light Default) + Deep Navy (Dark Mode)
+   ========================================================================== */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -6,16 +11,16 @@
   height: var(--header-height);
   z-index: 1000;
   transition: all var(--transition-normal);
-  background: rgba(8, 13, 11, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-scrolled {
-  background: rgba(8, 13, 11, 0.96);
-  border-bottom-color: rgba(16, 185, 129, 0.22);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: var(--nav-bg-scrolled);
+  border-bottom-color: var(--accent-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .navbar-container {
@@ -43,12 +48,13 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-bright);
+  color: var(--accent-primary);
+  transition: all var(--transition-fast);
 }
 
 .logo-text {
@@ -68,7 +74,7 @@
 .logo-tag {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent-lime);
+  color: var(--accent-primary);
   font-family: var(--font-mono);
 }
 
@@ -90,7 +96,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-secondary);
   padding: 6px 12px;
@@ -102,42 +108,53 @@
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--accent-primary);
+  background: var(--bg-card-elevated);
 }
 
 .nav-link.active {
-  color: var(--accent-bright);
+  color: var(--accent-primary);
   background: var(--badge-bg);
   border: 1px solid var(--badge-border);
-}
-
-/* Special styling for CODE BRO link */
-.nav-link.code-bro-link {
-  color: #c084fc;
-  background: rgba(130, 80, 223, 0.1);
-  border: 1px solid rgba(130, 80, 223, 0.3);
   font-weight: 600;
 }
 
+/* CODE BRO Link */
+.nav-link.code-bro-link {
+  color: #8250df;
+  background: rgba(130, 80, 223, 0.08);
+  border: 1px solid rgba(130, 80, 223, 0.28);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .nav-link.code-bro-link {
+  color: #c084fc;
+  background: rgba(130, 80, 223, 0.14);
+}
+
 .nav-link.code-bro-link:hover {
+  color: #7033d6;
+  background: rgba(130, 80, 223, 0.16);
+  border-color: #8250df;
+}
+
+[data-theme="dark"] .nav-link.code-bro-link:hover {
   color: #ffffff;
-  background: rgba(130, 80, 223, 0.22);
-  border-color: rgba(130, 80, 223, 0.5);
+  background: rgba(130, 80, 223, 0.25);
 }
 
 .nav-link.code-bro-link.active {
   color: #ffffff;
-  background: rgba(130, 80, 223, 0.3);
+  background: #8250df;
   border-color: #8250df;
-  box-shadow: 0 0 12px rgba(130, 80, 223, 0.35);
+  box-shadow: 0 2px 10px rgba(130, 80, 223, 0.35);
 }
 
 .code-bro-sparkle {
-  color: #c084fc;
-  animation: pulse-dot 2s infinite;
+  color: inherit;
 }
 
+/* Action Controls (Theme Toggle & Resume Button) */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -145,20 +162,15 @@
   margin-left: 8px;
 }
 
-.nav-resume-btn {
-  padding: 8px 14px;
-  font-size: 0.825rem;
-}
-
-/* Mobile Toggle Hamburger Button in Navbar */
-.mobile-toggle-btn {
-  display: none;
-  background: rgba(16, 26, 21, 0.8);
-  border: 1px solid var(--border-color);
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-color);
   color: var(--text-primary);
-  width: 44px;
-  height: 44px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -166,15 +178,62 @@
   transition: all var(--transition-fast);
 }
 
-.mobile-toggle-btn:hover {
-  background: rgba(16, 185, 129, 0.12);
+.theme-toggle-btn:hover {
   border-color: var(--accent-primary);
-  color: var(--accent-bright);
+  color: var(--accent-primary);
+  background: var(--bg-card);
+  transform: translateY(-1px);
+}
+
+.sun-icon {
+  color: #F59E0B; /* Golden warm sun */
+}
+
+.moon-icon {
+  color: var(--accent-primary); /* Modern blue moon */
+}
+
+.nav-resume-btn {
+  padding: 8px 14px;
+  font-size: 0.825rem;
+}
+
+/* Mobile Controls Wrapper in Header */
+.mobile-header-controls {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-header-theme-toggle {
+  width: 42px;
+  height: 42px;
+}
+
+.mobile-toggle-btn {
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: all var(--transition-fast);
+  display: flex;
+}
+
+.mobile-toggle-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 /* ==========================================================================
    PORTALED FULL-SCREEN MOBILE NAVIGATION OVERLAY
-   Rendered directly into document.body to prevent containing-block trapping
+   Theme-aware (Light / Dark)
    ========================================================================== */
 .mobile-nav-overlay {
   position: fixed;
@@ -182,14 +241,25 @@
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background-color: #080D0B;
-  background-image: 
-    radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.1) 0%, transparent 45%),
-    radial-gradient(circle at 90% 85%, rgba(5, 150, 105, 0.08) 0%, transparent 50%);
   z-index: 99999;
   display: flex;
   flex-direction: column;
   animation: mobileNavFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: background-color 0.25s ease;
+}
+
+.mobile-nav-overlay.theme-light {
+  background-color: #FFFFFF;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(96, 165, 250, 0.06) 0%, transparent 50%);
+}
+
+.mobile-nav-overlay.theme-dark {
+  background-color: #0B1220;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(59, 130, 246, 0.09) 0%, transparent 50%);
 }
 
 @keyframes mobileNavFadeIn {
@@ -203,7 +273,7 @@
   }
 }
 
-/* Mobile Header (Brand + Prominent Close Button) */
+/* Mobile Header (Brand + Controls) */
 .mobile-nav-header {
   height: var(--header-height);
   padding: 0 20px;
@@ -211,18 +281,33 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
-  background: rgba(8, 13, 11, 0.95);
   flex-shrink: 0;
+  transition: background-color 0.25s ease;
+}
+
+.theme-light .mobile-nav-header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(20, 43, 74, 0.04);
+}
+
+.theme-dark .mobile-nav-header {
+  background: rgba(11, 18, 32, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
+.mobile-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .mobile-close-btn {
-  background: rgba(16, 26, 21, 0.9);
+  background: var(--bg-card-elevated);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,9 +317,9 @@
 }
 
 .mobile-close-btn:hover {
-  background: rgba(239, 68, 68, 0.15);
-  border-color: rgba(239, 68, 68, 0.4);
-  color: #f87171;
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #ef4444;
 }
 
 /* Scrollable Navigation Body */
@@ -274,27 +359,28 @@
   border-radius: var(--radius-md);
   font-size: 1.02rem;
   font-weight: 500;
-  color: #F5F7F5;
+  color: var(--text-primary);
   text-decoration: none;
-  background: rgba(16, 26, 21, 0.7);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   transition: all var(--transition-fast);
   touch-action: manipulation;
+  box-shadow: var(--shadow-sm);
 }
 
 .mobile-nav-link:hover {
-  background: rgba(16, 185, 129, 0.08);
-  border-color: rgba(16, 185, 129, 0.35);
-  color: #ffffff;
+  background: var(--bg-card-elevated);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
-/* Active Route: Midnight Emerald Indicator */
+/* Active Link State */
 .mobile-nav-link.active {
-  background: rgba(16, 185, 129, 0.16);
-  border-color: #10B981;
-  color: #34D399;
+  background: var(--badge-bg);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
   font-weight: 600;
-  box-shadow: inset 3px 0 0 #10B981, 0 0 15px rgba(16, 185, 129, 0.12);
+  box-shadow: inset 3px 0 0 var(--accent-primary), 0 2px 12px rgba(37, 99, 235, 0.12);
 }
 
 .mobile-link-indicator {
@@ -306,33 +392,31 @@
 }
 
 .mobile-nav-link.active .mobile-link-indicator {
-  background: #10B981;
-  box-shadow: 0 0 8px #10B981;
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
 }
 
-/* CODE BRO Distinct Violet Styling */
+/* CODE BRO Mobile Link */
 .mobile-nav-link.code-bro-link {
-  background: rgba(130, 80, 223, 0.12);
-  border-color: rgba(130, 80, 223, 0.35);
-  color: #e9d5ff;
+  background: rgba(130, 80, 223, 0.08);
+  border-color: rgba(130, 80, 223, 0.3);
+  color: #8250df;
 }
 
-.mobile-nav-link.code-bro-link:hover {
-  background: rgba(130, 80, 223, 0.22);
-  border-color: #8250df;
-  color: #ffffff;
+[data-theme="dark"] .mobile-nav-link.code-bro-link {
+  color: #c084fc;
+  background: rgba(130, 80, 223, 0.15);
 }
 
 .mobile-nav-link.code-bro-link.active {
-  background: rgba(130, 80, 223, 0.28);
-  border-color: #a855f7;
+  background: #8250df;
+  border-color: #8250df;
   color: #ffffff;
-  box-shadow: inset 3px 0 0 #a855f7, 0 0 16px rgba(130, 80, 223, 0.3);
+  box-shadow: inset 3px 0 0 #ffffff, 0 4px 16px rgba(130, 80, 223, 0.35);
 }
 
 .mobile-nav-link.code-bro-link.active .mobile-link-indicator {
-  background: #a855f7;
-  box-shadow: 0 0 8px #a855f7;
+  background: #ffffff;
 }
 
 .mobile-code-bro-badge {
@@ -345,9 +429,14 @@
   letter-spacing: 0.05em;
   padding: 2px 8px;
   border-radius: var(--radius-full);
-  background: rgba(130, 80, 223, 0.25);
-  border: 1px solid rgba(130, 80, 223, 0.45);
+  background: rgba(130, 80, 223, 0.18);
+  border: 1px solid rgba(130, 80, 223, 0.35);
+  color: #8250df;
+}
+
+[data-theme="dark"] .mobile-code-bro-badge {
   color: #c084fc;
+  background: rgba(130, 80, 223, 0.25);
 }
 
 /* Mobile Footer Actions */
@@ -368,7 +457,6 @@
   gap: 10px;
   font-size: 0.95rem;
   font-weight: 600;
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
 }
 
 .mobile-footer-meta {
@@ -395,27 +483,28 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
-  background: var(--bg-card-elevated);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
 }
 
 .mobile-social-icon:hover {
-  color: var(--accent-bright);
+  color: var(--accent-primary);
   border-color: var(--accent-primary);
-  background: rgba(16, 185, 129, 0.12);
+  background: var(--bg-card-elevated);
 }
 
-/* Media Queries for Breakpoint Navigation */
+/* Breakpoint for Navigation */
 @media (max-width: 1024px) {
   .desktop-nav {
     display: none;
   }
-  .mobile-toggle-btn {
+  .mobile-header-controls {
     display: flex;
   }
 }

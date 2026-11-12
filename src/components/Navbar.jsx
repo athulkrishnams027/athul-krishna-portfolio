@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X, FileDown, Terminal, Sparkles, Layers, Briefcase, Github, Send, ExternalLink } from 'lucide-react';
+import {
+  Menu,
+  X,
+  FileDown,
+  Terminal,
+  Sparkles,
+  Briefcase,
+  Github,
+  Send,
+  Sun,
+  Moon
+} from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 import { personalInfo } from '../data/portfolioData';
 import './Navbar.css';
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -24,7 +37,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 25) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -74,12 +87,12 @@ export default function Navbar() {
   const mobileMenuPortal = typeof document !== 'undefined' && isOpen
     ? createPortal(
         <div
-          className="mobile-nav-overlay open"
+          className={`mobile-nav-overlay open ${theme === 'dark' ? 'theme-dark' : 'theme-light'}`}
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
         >
-          {/* Header with Brand & Close Button */}
+          {/* Header with Brand, Theme Toggle & Close Button */}
           <div className="mobile-nav-header">
             <Link to="/" className="navbar-logo" onClick={closeMenu} aria-label="Athul Krishna Home">
               <div className="logo-icon-box">
@@ -91,13 +104,28 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <button
-              className="mobile-close-btn"
-              onClick={closeMenu}
-              aria-label="Close navigation menu"
-            >
-              <X size={26} />
-            </button>
+            <div className="mobile-header-actions">
+              <button
+                className="theme-toggle-btn mobile-theme-toggle"
+                onClick={toggleTheme}
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              >
+                {theme === 'dark' ? (
+                  <Sun size={20} className="theme-icon sun-icon" />
+                ) : (
+                  <Moon size={20} className="theme-icon moon-icon" />
+                )}
+              </button>
+
+              <button
+                className="mobile-close-btn"
+                onClick={closeMenu}
+                aria-label="Close navigation menu"
+              >
+                <X size={24} />
+              </button>
+            </div>
           </div>
 
           {/* Navigation Links Scroll Container */}
@@ -214,10 +242,24 @@ export default function Navbar() {
             </ul>
 
             <div className="nav-actions">
+              {/* Theme Toggle Button */}
+              <button
+                className="theme-toggle-btn"
+                onClick={toggleTheme}
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              >
+                {theme === 'dark' ? (
+                  <Sun size={18} className="theme-icon sun-icon" />
+                ) : (
+                  <Moon size={18} className="theme-icon moon-icon" />
+                )}
+              </button>
+
               <a
                 href={personalInfo.resumePath}
                 download="Athul_Krishna_Resume.pdf"
-                className="btn btn-secondary btn-sm nav-resume-btn"
+                className="btn btn-primary btn-sm nav-resume-btn"
                 title="Download Athul Krishna's Resume"
               >
                 <FileDown size={14} />
@@ -226,15 +268,30 @@ export default function Navbar() {
             </div>
           </nav>
 
-          {/* Mobile Hamburger Toggle Button */}
-          <button
-            className="mobile-toggle-btn"
-            onClick={toggleMenu}
-            aria-expanded={isOpen}
-            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Right Controls: Theme Toggle + Hamburger Toggle Button */}
+          <div className="mobile-header-controls">
+            <button
+              className="theme-toggle-btn mobile-header-theme-toggle"
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? (
+                <Sun size={19} className="theme-icon sun-icon" />
+              ) : (
+                <Moon size={19} className="theme-icon moon-icon" />
+              )}
+            </button>
+
+            <button
+              className="mobile-toggle-btn"
+              onClick={toggleMenu}
+              aria-expanded={isOpen}
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 

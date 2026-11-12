@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Athul Krishna | Java Full Stack Developer | Spring Boot &amp; React</title>
     
+    <!-- Immediate theme restoration script to eliminate theme flickering -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('portfolio-theme');
+          var theme = (saved === 'dark' || saved === 'light') ? saved : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {}
+      })();
+    </script>
+    
     <!-- SEO & Metadata -->
     <meta name="description" content="Portfolio of Athul Krishna — Java Full Stack Developer specializing in Java, Spring Boot, REST APIs, Microservices, PostgreSQL, and React web applications." />
     <meta name="keywords" content="Athul Krishna, Athul Krishna M S, Java Full Stack Developer, Java Developer, Spring Boot, Microservices, REST APIs, PostgreSQL, Hibernate, React, Software Engineer, Kerala, Trivandrum" />
     <meta name="author" content="Athul Krishna" />
-    <meta name="theme-color" content="#080D0B" />
+    <meta name="theme-color" content="#2563EB" />
 
     <!-- Open Graph / Social Sharing (WhatsApp, LinkedIn, Twitter, Facebook) -->
     <meta property="og:type" content="website" />

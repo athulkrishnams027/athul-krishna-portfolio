@@ -48,14 +48,14 @@
 .timeline-milestone-row.highlighted .milestone-marker-bubble {
   border-color: var(--accent-primary);
   background: var(--badge-bg);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 16px var(--glow-blue);
   color: var(--accent-primary);
 }
 
 .milestone-vertical-line {
   width: 2px;
   flex-grow: 1;
-  background: linear-gradient(to bottom, rgba(16, 185, 129, 0.4), rgba(36, 53, 43, 0.2));
+  background: linear-gradient(to bottom, var(--accent-primary), var(--border-color));
   margin-top: 8px;
 }
 
@@ -68,8 +68,8 @@
 }
 
 .timeline-milestone-row.highlighted .milestone-content-card {
-  background: linear-gradient(145deg, var(--bg-card-elevated) 0%, var(--bg-card) 100%);
-  border-color: rgba(16, 185, 129, 0.3);
+  background: var(--bg-card);
+  border-color: var(--accent-primary);
 }
 
 .milestone-header {

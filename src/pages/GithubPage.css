@@ -27,7 +27,7 @@
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--accent-primary);
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 20px var(--glow-blue);
   flex-shrink: 0;
 }
 
@@ -174,9 +174,9 @@
 }
 
 .repo-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
+  border-color: var(--accent-primary);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .repo-top {

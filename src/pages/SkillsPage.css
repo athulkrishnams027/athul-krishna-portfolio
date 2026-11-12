@@ -34,8 +34,9 @@
 .skills-filter-pill.active {
   background: var(--badge-bg);
   border-color: var(--accent-primary);
-  color: var(--accent-bright);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+  color: var(--accent-primary);
+  box-shadow: 0 0 16px var(--glow-blue);
+  font-weight: 600;
 }
 
 /* Cards Grid */
@@ -153,9 +154,9 @@
 }
 
 .related-project-link:hover {
-  background: rgba(16, 185, 129, 0.2);
+  background: var(--badge-bg);
   border-color: var(--accent-primary);
-  color: #ffffff;
+  color: var(--accent-primary);
   transform: translateY(-1px);
 }
 

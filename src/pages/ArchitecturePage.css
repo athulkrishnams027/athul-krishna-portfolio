@@ -1,14 +1,19 @@
+/* ==========================================================================
+   ARCHITECTURE SHOWCASE STYLING
+   Interactive Technical Architecture Diagrams (White-Blue & Dark Mode)
+   ========================================================================== */
+
 .architecture-page {
   padding-bottom: 80px;
   width: 100%;
 }
 
-/* Tabs Navigation */
-.architecture-tabs-nav {
+/* Tab Selector Bar */
+.arch-tabs-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .arch-tab-btn {
@@ -24,6 +29,7 @@
   transition: all var(--transition-fast);
   touch-action: manipulation;
   flex: 1 1 200px;
+  box-shadow: var(--shadow-sm);
 }
 
 .arch-tab-btn:hover {
@@ -35,15 +41,16 @@
 .arch-tab-btn.active {
   background: var(--bg-card-elevated);
   border-color: var(--accent-primary);
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
+  box-shadow: var(--shadow-md), 0 0 16px var(--glow-blue);
 }
 
 .arch-tab-badge {
   font-family: var(--font-mono);
   font-size: 0.725rem;
-  color: var(--accent-lime);
+  color: var(--accent-primary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  font-weight: 600;
 }
 
 .arch-tab-title {
@@ -58,7 +65,9 @@
   padding: 40px;
   background: var(--bg-card);
   border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
   margin-bottom: 56px;
+  box-shadow: var(--shadow-card);
 }
 
 .showcase-header {
@@ -76,8 +85,9 @@
 .showcase-subtitle {
   font-family: var(--font-mono);
   font-size: 1.05rem;
-  color: var(--accent-bright);
+  color: var(--accent-primary);
   margin-bottom: 14px;
+  font-weight: 600;
 }
 
 .showcase-summary {
@@ -89,7 +99,7 @@
 /* Diagram Viewport */
 .diagram-viewport {
   padding: 32px 24px;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   margin-bottom: 48px;
@@ -126,9 +136,9 @@
   border-radius: 50%;
 }
 
-.legend-dot.green { background: #10B981; }
-.legend-dot.lime { background: #A3E635; }
-.legend-dot.teal { background: #34D399; }
+.legend-dot.green { background: #2563EB; }
+.legend-dot.lime { background: #0284C7; }
+.legend-dot.teal { background: #38BDF8; }
 .legend-dot.blue { background: #60A5FA; }
 
 /* Microservices Flow Grid */
@@ -147,17 +157,19 @@
   border: 1px solid var(--border-color);
   width: 100%;
   max-width: 520px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
 }
 
 .box-tag {
   display: block;
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--accent-lime);
+  color: var(--accent-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 3px;
+  font-weight: 600;
 }
 
 .box-title {
@@ -175,8 +187,8 @@
 }
 
 .client-box {
-  border-color: rgba(163, 230, 53, 0.35);
-  background: linear-gradient(145deg, #121F18 0%, #0C1510 100%);
+  border-color: rgba(37, 99, 235, 0.4);
+  background: var(--bg-card-elevated);
 }
 
 .cluster-2col {
@@ -188,22 +200,23 @@
 }
 
 .gateway-box {
-  border-color: rgba(16, 185, 129, 0.4);
-  background: linear-gradient(145deg, #14221A 0%, #101B15 100%);
+  border-color: rgba(37, 99, 235, 0.4);
+  background: var(--bg-card);
   flex: 1.2;
 }
 
 .eureka-box {
-  border-color: rgba(5, 150, 105, 0.4);
-  background: linear-gradient(145deg, #0F1E16 0%, #0B1711 100%);
+  border-color: rgba(2, 132, 199, 0.4);
+  background: var(--bg-card);
   flex: 1;
 }
 
 .horizontal-connector-arrow {
   font-family: var(--font-mono);
   font-size: 0.725rem;
-  color: var(--accent-lime);
+  color: var(--accent-primary);
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .services-row-3col {
@@ -215,13 +228,13 @@
 }
 
 .service-box {
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(37, 99, 235, 0.35);
   padding: 14px 12px;
 }
 
 .db-box {
-  border-color: rgba(52, 211, 153, 0.4);
-  background: linear-gradient(145deg, #101E17 0%, #0A140F 100%);
+  border-color: rgba(96, 165, 250, 0.4);
+  background: var(--bg-card-elevated);
 }
 
 .diagram-pipe {
@@ -270,7 +283,7 @@
   height: 36px;
   border-radius: 50%;
   background: var(--accent-primary);
-  color: #04140D;
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,6 +291,7 @@
   font-weight: 800;
   flex-shrink: 0;
   margin-top: 4px;
+  box-shadow: 0 2px 8px var(--glow-blue);
 }
 
 .step-content {
@@ -285,15 +299,18 @@
   padding: 20px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .step-icon-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent-bright);
+  color: var(--accent-primary);
   font-size: 1rem;
   margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .step-desc {
@@ -331,6 +348,8 @@
   gap: 6px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .trans-step-card.highlight-step {
@@ -339,14 +358,15 @@
 }
 
 .trans-step-card.success-step {
-  border-color: var(--accent-lime);
+  border-color: var(--accent-primary);
 }
 
 .trans-step-label {
   font-family: var(--font-mono);
   font-size: 0.725rem;
-  color: var(--accent-lime);
+  color: var(--accent-primary);
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .trans-step-title {
@@ -362,7 +382,7 @@
 }
 
 .trans-step-arrow {
-  color: var(--accent-bright);
+  color: var(--accent-primary);
   font-size: 1.2rem;
   font-weight: 700;
 }
@@ -383,6 +403,8 @@
   padding: 20px 24px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .wf-header {
@@ -395,10 +417,12 @@
 .wf-stage {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--accent-lime);
-  background: var(--badge-lime-bg);
+  color: var(--accent-primary);
+  background: var(--badge-bg);
   padding: 2px 8px;
   border-radius: 4px;
+  border: 1px solid var(--badge-border);
+  font-weight: 600;
 }
 
 .wf-title {
@@ -438,8 +462,10 @@
 
 .arch-component-card {
   padding: 22px;
-  background: var(--bg-primary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .comp-header {
@@ -452,8 +478,9 @@
 .comp-role-badge {
   font-family: var(--font-mono);
   font-size: 0.725rem;
-  color: var(--accent-lime);
+  color: var(--accent-primary);
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .comp-name {
@@ -491,7 +518,7 @@
 }
 
 .highlight-icon {
-  color: var(--accent-bright);
+  color: var(--accent-primary);
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -503,8 +530,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  background: linear-gradient(135deg, var(--bg-card-elevated) 0%, var(--bg-card) 100%);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .cta-text {
@@ -514,11 +543,12 @@
 .cta-tag {
   font-family: var(--font-mono);
   font-size: 0.775rem;
-  color: var(--accent-lime);
+  color: var(--accent-primary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   display: block;
   margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .cta-title {
