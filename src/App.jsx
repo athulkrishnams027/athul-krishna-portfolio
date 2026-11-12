@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ArrowUp } from 'lucide-react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Services from './components/Services';
-import Education from './components/Education';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+
+// Dedicated Route Pages
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import SkillsPage from './pages/SkillsPage';
+import ExperiencePage from './pages/ExperiencePage';
+import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
+import ArchitecturePage from './pages/ArchitecturePage';
+import CodeBroPage from './pages/CodeBroPage';
+import ContactPage from './pages/ContactPage';
+import GithubPage from './pages/GithubPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -18,7 +25,8 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = window.scrollY || document.documentElement.scrollTop;
-      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const windowHeight =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const progress = windowHeight > 0 ? (totalScroll / windowHeight) * 100 : 0;
       setScrollProgress(progress);
 
@@ -41,42 +49,55 @@ export default function App() {
   };
 
   return (
-    <div className="portfolio-app">
-      {/* Scroll Progress Indicator Bar at Top */}
-      <div
-        className="scroll-progress-bar"
-        style={{ width: `${scrollProgress}%` }}
-        aria-hidden="true"
-      />
+    <BrowserRouter>
+      <div className="portfolio-app">
+        {/* Scroll Progress Bar at very top */}
+        <div
+          className="scroll-progress-bar"
+          style={{ width: `${scrollProgress}%` }}
+          aria-hidden="true"
+        />
 
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
 
-      <Navbar />
+        {/* Global Scroll-to-top on route change */}
+        <ScrollToTop />
 
-      <main id="main-content">
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Services />
-        <Education />
-        <Contact />
-      </main>
+        {/* Global Fixed / Sticky Navbar */}
+        <Navbar />
 
-      <Footer />
+        {/* Main Routed Content */}
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+            <Route path="/architecture" element={<ArchitecturePage />} />
+            <Route path="/code-bro" element={<CodeBroPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/github" element={<GithubPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
 
-      {/* Floating Back to Top Button */}
-      <button
-        className={`back-to-top-float ${showBackToTop ? 'visible' : ''}`}
-        onClick={scrollToTop}
-        aria-label="Back to top of page"
-        title="Back to top"
-      >
-        <ArrowUp size={20} />
-      </button>
-    </div>
+        {/* Global Footer */}
+        <Footer />
+
+        {/* Floating Back to Top Button */}
+        <button
+          className={`back-to-top-float ${showBackToTop ? 'visible' : ''}`}
+          onClick={scrollToTop}
+          aria-label="Back to top of page"
+          title="Back to top"
+        >
+          <ArrowUp size={20} />
+        </button>
+      </div>
+    </BrowserRouter>
   );
 }

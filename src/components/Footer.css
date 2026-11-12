@@ -3,6 +3,7 @@
   border-top: 1px solid var(--border-color);
   padding: 64px 0 32px 0;
   position: relative;
+  width: 100%;
 }
 
 .footer-container {
@@ -13,7 +14,7 @@
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1.2fr 1.2fr;
   gap: 48px;
 }
 
@@ -60,6 +61,29 @@
   color: var(--text-muted);
   line-height: 1.6;
   max-width: 440px;
+  margin-bottom: 16px;
+}
+
+.footer-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  border-radius: var(--radius-full);
+  color: var(--accent-bright);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  width: fit-content;
+}
+
+.footer-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-primary);
+  animation: pulse-dot 2s infinite;
 }
 
 .footer-col-title {
@@ -82,10 +106,21 @@
   font-size: 0.885rem;
   color: var(--text-secondary);
   transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .footer-links a:hover {
   color: var(--accent-bright);
+}
+
+.footer-code-bro-link {
+  color: #c084fc !important;
+}
+
+.footer-code-bro-link:hover {
+  color: #ffffff !important;
 }
 
 .footer-connect-col {
@@ -123,6 +158,13 @@
   font-size: 0.825rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
+  margin-bottom: 6px;
+}
+
+.footer-email-link a {
+  font-size: 0.825rem;
+  color: var(--accent-bright);
+  font-family: var(--font-mono);
 }
 
 /* Bottom Bar */
@@ -134,6 +176,8 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-size: 0.85rem;
   color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .back-to-top-link {
@@ -143,6 +187,9 @@
   color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   transition: color var(--transition-fast);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
@@ -152,25 +199,9 @@
   color: var(--accent-bright);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
+    gap: 36px;
   }
 }
-
-@media (max-width: 480px) {
-  .footer {
-    padding: 48px 0 calc(24px + env(safe-area-inset-bottom, 0px)) 0;
-  }
-  .footer-container {
-    gap: 32px;
-  }
-}
-

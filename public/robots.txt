@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://athul-krishna-portfolio-livid.vercel.app/sitemap.xml

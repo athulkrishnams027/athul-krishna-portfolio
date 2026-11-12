@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowUp, Linkedin, Github, Mail, Terminal } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowUp, Linkedin, Github, Mail, Terminal, Sparkles } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import './Footer.css';
 
@@ -18,32 +19,41 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-top">
+          {/* Brand & Overview */}
           <div className="footer-branding">
-            <a href="#home" className="footer-logo">
+            <Link to="/" className="footer-logo">
               <div className="footer-icon-box">
                 <Terminal size={16} />
               </div>
-              <span className="footer-name">{personalInfo.name}</span>
-            </a>
+              <span className="footer-name">{personalInfo.fullName}</span>
+            </Link>
             <p className="footer-role">{personalInfo.title}</p>
             <p className="footer-tagline">
-              Building scalable backend applications, microservices, and practical software solutions using Java, Spring Boot, and React.
+              Building scalable backend applications, microservices, and practical software solutions using Java, Spring Boot, PostgreSQL, and React.
             </p>
+            <div className="footer-brand-badge">
+              <span className="footer-pulse-dot"></span>
+              <span>Available for Enterprise Roles &amp; Freelance Projects</span>
+            </div>
           </div>
 
+          {/* Navigation Pages */}
           <div className="footer-nav-col">
-            <h5 className="footer-col-title">Navigation</h5>
+            <h5 className="footer-col-title">Portfolio Pages</h5>
             <ul className="footer-links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#education">Journey</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Me</Link></li>
+              <li><Link to="/skills">Technical Skills</Link></li>
+              <li><Link to="/experience">Career Experience</Link></li>
+              <li><Link to="/projects">Project Case Studies</Link></li>
+              <li><Link to="/architecture">System Architecture</Link></li>
+              <li><Link to="/code-bro" className="footer-code-bro-link"><Sparkles size={13} /> CODE BRO Freelance</Link></li>
+              <li><Link to="/contact">Contact Athul</Link></li>
+              <li><Link to="/github">GitHub Activity</Link></li>
             </ul>
           </div>
 
+          {/* Connect & Direct Channels */}
           <div className="footer-connect-col">
             <h5 className="footer-col-title">Connect &amp; Social</h5>
             <div className="footer-social-row">
@@ -77,18 +87,22 @@ export default function Footer() {
               </a>
             </div>
             <p className="footer-location-text">{personalInfo.location}</p>
+            <p className="footer-email-link">
+              <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
+            </p>
           </div>
         </div>
 
+        {/* Footer Bottom Bar */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            &copy; {currentYear} {personalInfo.name}. All rights reserved.
+            &copy; {currentYear} {personalInfo.fullName}. Built with Java backend mindset &amp; React.
           </p>
 
-          <a href="#home" onClick={scrollToTop} className="back-to-top-link" aria-label="Back to top of page">
+          <button onClick={scrollToTop} className="back-to-top-link" aria-label="Back to top of page">
             <span>Back to top</span>
             <ArrowUp size={16} />
-          </a>
+          </button>
         </div>
       </div>
     </footer>

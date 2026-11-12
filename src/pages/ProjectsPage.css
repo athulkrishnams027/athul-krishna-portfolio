@@ -1,0 +1,136 @@
+.projects-page {
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.projects-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.filter-btn:hover {
+  background: var(--bg-card-elevated);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--badge-bg);
+  border-color: var(--accent-primary);
+  color: var(--accent-bright);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+}
+
+/* Confidentiality banner */
+.govt-confidentiality-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 40px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.confidentiality-icon {
+  color: var(--accent-bright);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.confidentiality-content strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.confidentiality-content p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.confidentiality-content em {
+  color: var(--accent-bright);
+  font-style: normal;
+}
+
+/* Projects Catalog Grid */
+.projects-grid-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+/* Architecture Showcase Banner */
+.projects-architecture-banner {
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: linear-gradient(135deg, var(--bg-card-elevated) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border-color);
+}
+
+.arch-banner-left {
+  max-width: 680px;
+}
+
+.arch-tag {
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  color: var(--accent-lime);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.arch-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.arch-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.arch-cta-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .projects-architecture-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .arch-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

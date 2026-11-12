@@ -611,6 +611,155 @@ export const achievements = [
   }
 ];
 
+export const codeBroData = {
+  brand: "CODE BRO",
+  tagline: "Build. Innovate. Elevate.",
+  summary:
+    "Professional freelance web development, modern frontend engineering, and custom web applications for businesses, startups, and individuals.",
+  whatsappUrl: "https://wa.me/919207591476?text=Hi%20Athul,%20I'm%20interested%20in%20CODE%20BRO%20web%20development%20services.",
+  email: "athulkrishnams027@gmail.com",
+  packages: [
+    {
+      id: "starter",
+      name: "Starter Website",
+      price: "₹7,999",
+      period: "One-time",
+      badge: "Best for Portfolios & Individuals",
+      description: "Clean, fast, high-converting responsive website for professionals, portfolios, or small businesses.",
+      deliveryTime: "4 - 7 Business Days",
+      popular: false,
+      features: [
+        "1 to 5 Bespoke Responsive Pages",
+        "Modern Component UI (React / HTML5 / CSS3)",
+        "Mobile-first, Zero Horizontal Overflow",
+        "Direct Contact Form & WhatsApp Integration",
+        "Technical SEO & Social Media Preview Tags",
+        "Free Fast Hosting Setup on Vercel / Netlify",
+        "1 Month Free Bug Fixing Support"
+      ]
+    },
+    {
+      id: "professional",
+      name: "Professional Website",
+      price: "₹17,999",
+      period: "One-time",
+      badge: "Most Popular for Businesses",
+      description: "Feature-rich website with bespoke design, animations, dynamic sections, and lead capture systems.",
+      deliveryTime: "7 - 14 Business Days",
+      popular: true,
+      features: [
+        "Up to 10 Tailored Responsive Pages",
+        "Custom UI/UX Designed for High Conversions",
+        "Interactive Animations & Micro-interactions",
+        "Lead Capture Funnels & Email Notifications",
+        "Dynamic Content / Gallery / Blog Modules",
+        "Speed & Core Web Vitals Optimization",
+        "Domain & DNS Configuration Assistance",
+        "2 Months Dedicated Bug & Revision Support"
+      ]
+    },
+    {
+      id: "premium",
+      name: "Premium Web Application",
+      price: "₹34,999+",
+      period: "Custom Scope",
+      badge: "Full-Stack Enterprise Solution",
+      description: "End-to-end full-stack web application with backend REST APIs, secure database, user authentication, and admin control panel.",
+      deliveryTime: "15 - 30 Business Days",
+      popular: false,
+      features: [
+        "Full-Stack Architecture (Spring Boot Backend + React Frontend)",
+        "Secure User Authentication & RBAC Access Control",
+        "Relational Database Schema (PostgreSQL / MySQL)",
+        "Custom Administrative Control Dashboard",
+        "REST API Layer with Robust Validation & Error Handling",
+        "Docker Containerization & Production Cloud Deployment",
+        "Comprehensive API Documentation & Postman Collections",
+        "3 Months Enterprise Maintenance & Priority SLA"
+      ]
+    }
+  ],
+  maintenancePlans: [
+    {
+      id: "basic-care",
+      name: "Basic Care",
+      price: "₹499",
+      period: "/ month",
+      description: "Essential upkeep to keep your website secure, running, and updated.",
+      features: [
+        "Monthly Security & Dependency Updates",
+        "Automated Monthly Cloud Backups",
+        "24/7 Uptime Monitoring & Alerts",
+        "Minor Text & Image Content Updates (1 hr/mo)",
+        "Email Support within 48 Hours"
+      ]
+    },
+    {
+      id: "standard-support",
+      name: "Standard Support",
+      price: "₹999",
+      period: "/ month",
+      badge: "Recommended",
+      description: "Proactive maintenance, performance tuning, and regular content adjustments.",
+      features: [
+        "Bi-weekly Security & Dependency Audits",
+        "Weekly Cloud Backups & Instant Restore",
+        "Speed & Core Web Vitals Optimization",
+        "Up to 3 Hours Monthly Development Tweaks",
+        "Form & Integration Diagnostics",
+        "Priority Support Response within 24 Hours"
+      ]
+    },
+    {
+      id: "premium-retainer",
+      name: "Premium Retainer",
+      price: "₹1,999",
+      period: "/ month",
+      description: "Dedicated developer on call for continuous feature development and high uptime.",
+      features: [
+        "Weekly Health Audits & Continuous Updates",
+        "Daily Cloud Backups & Zero-Downtime Rollbacks",
+        "Up to 8 Hours Monthly Feature Engineering",
+        "New Page Creation & Major Layout Updates",
+        "Database Maintenance & API Health Checks",
+        "Dedicated WhatsApp & Priority Support"
+      ]
+    }
+  ],
+  addOns: [
+    {
+      title: "Payment Gateway Integration",
+      price: "₹3,999",
+      desc: "Razorpay / Stripe integration with instant webhook payment verification."
+    },
+    {
+      title: "Custom Domain & DNS Setup",
+      price: "₹1,499",
+      desc: "Complete domain registration assistance, Cloudflare SSL setup, and email routing."
+    },
+    {
+      title: "Interactive Admin Dashboard",
+      price: "₹7,999",
+      desc: "Password-protected administrative panel to view inquiries, manage content, and export leads."
+    },
+    {
+      title: "Multi-Language Localization",
+      price: "₹4,999",
+      desc: "Dual-language support (English + Regional/Global Language) with instant toggle."
+    },
+    {
+      title: "WhatsApp Live Chat Widget",
+      price: "₹999",
+      desc: "Floating interactive WhatsApp chat trigger with custom pre-filled message."
+    },
+    {
+      title: "Advanced Google Analytics 4 & Meta Pixel",
+      price: "₹1,999",
+      desc: "Custom conversion events, form submission tracking, and traffic analytics."
+    }
+  ]
+};
+
 export const codeSample = {
   filename: "PetShopController.java",
   language: "java",
